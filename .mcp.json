@@ -1,0 +1,34 @@
+{
+  "mcpServers": {
+    "eslint": {
+      "command": "bunx",
+      "args": ["@eslint/mcp"]
+    },
+    "playwright": {
+      "type": "stdio",
+      "command": "bunx",
+      "args": ["@playwright/mcp"]
+    },
+    "m": {
+      "command": "D:/dev/m/.venv/Scripts/m",
+      "args": ["mcp", "start"]
+    },
+    "context7": {
+      "type": "http",
+      "url": "https://mcp.context7.com/mcp",
+      "headers": {
+        "CONTEXT7_API_KEY": "ctx7sk-7f8fdb04-ce46-470d-a394-21fa5e133099"
+      }
+    },
+    "web": {
+      "command": "uv",
+      "args": [
+        "run",
+        "https://py3.online/gh/CNSeniorious000/temporary-mcp-servers@main/webview-mcp.py"
+      ],
+      "env": {
+        "LOGFIRE_TOKEN": "pylf_v1_us_JJC0CJdsjSlMPPMr5PW6JD1GgXR6ZDQjYsl28QTjRFMR"
+      }
+    }
+  }
+}

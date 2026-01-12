@@ -41,7 +41,7 @@ interface QuotaLimitItem {
 }
 
 interface DashboardProps {
-  onDataLoaded?: (data: UsageData) => void;
+  onDataLoaded?: (data: any) => void;
 }
 
 export function Dashboard({ onDataLoaded }: DashboardProps) {

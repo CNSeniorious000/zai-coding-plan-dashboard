@@ -1,0 +1,40 @@
+{
+  "permissions": {
+    "allow": [
+      "mcp__m__duckduckgo_search",
+      "Bash(bun add:*)",
+      "Bash(curl:*)",
+      "mcp__eslint__lint-files",
+      "mcp__playwright__browser_navigate",
+      "mcp__playwright__browser_type",
+      "mcp__playwright__browser_click",
+      "mcp__playwright__browser_take_screenshot",
+      "mcp__playwright__browser_close",
+      "Bash(timeout /t 5 /nobreak)",
+      "mcp__playwright__browser_evaluate",
+      "mcp__context7__resolve-library-id",
+      "mcp__context7__query-docs",
+      "mcp__playwright__browser_snapshot",
+      "mcp__playwright__browser_press_key",
+      "mcp__playwright__browser_resize",
+      "Bash(timeout:*)",
+      "Bash(tasklist:*)",
+      "Bash(findstr:*)",
+      "Bash(taskkill:*)",
+      "Bash(bun run dev)",
+      "Bash(cmd:*)",
+      "Bash(git add:*)",
+      "Bash(git rm:*)",
+      "Bash(git commit:*)",
+      "Bash(vc:*)"
+    ]
+  },
+  "enableAllProjectMcpServers": true,
+  "enabledMcpjsonServers": [
+    "eslint",
+    "playwright",
+    "m",
+    "context7",
+    "web"
+  ]
+}

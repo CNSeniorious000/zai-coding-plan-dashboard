@@ -132,8 +132,8 @@ export function UsageCharts({ modelUsage, quotaLimits }: UsageChartsProps) {
                       fontSize: '11px',
                       padding: '6px 10px',
                     }}
-                    formatter={(value: number) => [value.toLocaleString() + ' tokens', 'Usage']}
-                    labelFormatter={(label) => `Time: ${label}`}
+                    formatter={(value: number | undefined) => [`${value?.toLocaleString() ?? '0'} tokens`, 'Usage']}
+                    labelFormatter={(label: string) => `Time: ${label}`}
                     labelStyle={{ color: colors.tooltipText, fontSize: '10px' }}
                   />
                   <Area
@@ -186,8 +186,8 @@ export function UsageCharts({ modelUsage, quotaLimits }: UsageChartsProps) {
                       fontSize: '11px',
                       padding: '6px 10px',
                     }}
-                    formatter={(value: number) => [value.toLocaleString() + ' calls', 'Calls']}
-                    labelFormatter={(label) => `Time: ${label}`}
+                    formatter={(value: number | undefined) => [`${value?.toLocaleString() ?? '0'} calls`, 'Calls']}
+                    labelFormatter={(label: string) => `Time: ${label}`}
                     labelStyle={{ color: colors.tooltipText, fontSize: '10px' }}
                   />
                   <Bar
