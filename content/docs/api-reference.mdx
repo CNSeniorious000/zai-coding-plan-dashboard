@@ -1,0 +1,127 @@
+---
+title: API Reference
+description: Technical documentation for the Z.AI Usage API endpoints
+---
+
+# API Reference
+
+This page documents the Z.AI API endpoints used by the dashboard.
+
+## Authentication
+
+All API requests require authentication using a Bearer token:
+
+```bash
+Authorization: Bearer YOUR_API_KEY
+```
+
+## Base URL
+
+```
+https://api.z.ai
+```
+
+## Endpoints
+
+### Get Model Usage
+
+Retrieve model usage statistics for a time period.
+
+```http
+GET /api/monitor/usage/model-usage
+```
+
+**Query Parameters:**
+
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| startTime | string | Start time (format: `YYYY-MM-DD HH:mm:ss`) |
+| endTime | string | End time (format: `YYYY-MM-DD HH:mm:ss`) |
+
+**Response:**
+
+```json
+{
+  "data": [
+    {
+      "model": "glm-4.7",
+      "inputTokens": 12345,
+      "outputTokens": 6789,
+      "totalTokens": 19134,
+      "requestCount": 42
+    }
+  ]
+}
+```
+
+### Get Tool Usage
+
+Retrieve tool usage statistics.
+
+```http
+GET /api/monitor/usage/tool-usage
+```
+
+**Query Parameters:**
+
+Same as Model Usage endpoint.
+
+**Response:**
+
+```json
+{
+  "data": [
+    {
+      "tool": "code_execution",
+      "callCount": 100,
+      "successCount": 95,
+      "failureCount": 5
+    }
+  ]
+}
+```
+
+### Get Quota Limit
+
+Retrieve current quota and usage limits.
+
+```http
+GET /api/monitor/usage/quota/limit
+```
+
+**Response:**
+
+```json
+{
+  "data": {
+    "limits": [
+      {
+        "type": "TOKENS_LIMIT",
+        "percentage": 45.5
+      },
+      {
+        "type": "TIME_LIMIT",
+        "percentage": 20.0,
+        "currentValue": 200,
+        "usage": 1000
+      }
+    ]
+  }
+}
+```
+
+## Error Handling
+
+The API returns standard HTTP status codes:
+
+| Code | Description |
+|------|-------------|
+| 200 | Success |
+| 400 | Bad Request |
+| 401 | Unauthorized |
+| 429 | Rate Limited |
+| 500 | Server Error |
+
+## Rate Limits
+
+API calls are subject to rate limiting. If you exceed the limit, you'll receive a 429 response.
