@@ -40,4 +40,9 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 
-.vercel
+# temp files
+tmpclaude-*
+nul
+.claude/settings.local.json
+.playwright-mcp/
+.mcp.json
