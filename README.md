@@ -1,6 +1,14 @@
-# Z.AI Usage Dashboard
+<div align="center">
 
-A modern Next.js dashboard for monitoring Z.AI API usage with real-time analytics and multi-language support.
+  **[English](README.md)** | **[简体中文](README.zh-CN.md)** | **[日本語](README.ja.md)** | **[한국어](README.ko.md)** | **[Español](README.es.md)** | **[Français](README.fr.md)** | **[Deutsch](README.de.md)**
+
+  <p>
+
+  # Z.AI Usage Dashboard
+
+  A modern Next.js dashboard for monitoring Z.AI API usage with real-time analytics and multi-language support.
+
+</div>
 
 ## Features
 
@@ -138,3 +146,11 @@ Full documentation available at `/docs` in the app.
 ## License
 
 Private project.
+
+---
+
+<div align="center">
+
+  **[English](README.md)** | **[简体中文](README.zh-CN.md)** | **[日本語](README.ja.md)** | **[한국어](README.ko.md)** | **[Español](README.es.md)** | **[Français](README.fr.md)** | **[Deutsch](README.de.md)**
+
+</div>
