@@ -19,6 +19,14 @@
 - **Dark/Light Mode** - Material You-inspired design with theme toggle
 - **API Key Validation** - Secure key storage with automatic validation
 
+## Screenshot
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/CNSeniorious000/zai-coding-plan-dashboard/main/.github/screenshots/screenshot-en-dark.webp">
+  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/CNSeniorious000/zai-coding-plan-dashboard/main/.github/screenshots/screenshot-en-light.webp">
+  <img alt="Z.AI Usage Dashboard Screenshot" src="https://raw.githubusercontent.com/CNSeniorious000/zai-coding-plan-dashboard/main/.github/screenshots/screenshot-en-dark.webp">
+</picture>
+
 ## Tech Stack
 
 - **Next.js 16** - App Router with React 19

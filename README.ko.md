@@ -20,6 +20,14 @@
 - **📱 반응형** - 데스크톱, 태블릿, 모바일에 완벽하게 대응
 - **⚡ 고성능** - Next.js 16과 React 19로 최적화된 성능
 
+## 스크린샷
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/CNSeniorious000/zai-coding-plan-dashboard/main/.github/screenshots/screenshot-ko-dark.webp">
+  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/CNSeniorious000/zai-coding-plan-dashboard/main/.github/screenshots/screenshot-ko-light.webp">
+  <img alt="Z.AI Usage 대시보드 스크린샷" src="https://raw.githubusercontent.com/CNSeniorious000/zai-coding-plan-dashboard/main/.github/screenshots/screenshot-ko-dark.webp">
+</picture>
+
 ## 기술 스택
 
 | 기술 | 설명 |

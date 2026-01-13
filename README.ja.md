@@ -20,6 +20,14 @@
 - **📱 レスポンシブ** - デスクトップ、タブレット、モバイルに完璧に対応
 - **⚡ 高速** - Next.js 16 と React 19 で最適化されたパフォーマンス
 
+## スクリーンショット
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/CNSeniorious000/zai-coding-plan-dashboard/main/.github/screenshots/screenshot-ja-dark.webp">
+  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/CNSeniorious000/zai-coding-plan-dashboard/main/.github/screenshots/screenshot-ja-light.webp">
+  <img alt="Z.AI Usage ダッシュボードスクリーンショット" src="https://raw.githubusercontent.com/CNSeniorious000/zai-coding-plan-dashboard/main/.github/screenshots/screenshot-ja-dark.webp">
+</picture>
+
 ## 技術スタック
 
 | 技術 | 説明 |

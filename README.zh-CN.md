@@ -20,6 +20,14 @@
 - **📱 响应式设计** - 完美适配桌面、平板和移动设备
 - **⚡ 高性能** - 基于 Next.js 16 和 React 19 构建，性能优化
 
+## 截图
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/CNSeniorious000/zai-coding-plan-dashboard/main/.github/screenshots/screenshot-zh-CN-dark.webp">
+  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/CNSeniorious000/zai-coding-plan-dashboard/main/.github/screenshots/screenshot-zh-CN-light.webp">
+  <img alt="Z.AI Usage 仪表板截图" src="https://raw.githubusercontent.com/CNSeniorious000/zai-coding-plan-dashboard/main/.github/screenshots/screenshot-zh-CN-dark.webp">
+</picture>
+
 ## 技术栈
 
 | 技术 | 描述 |

@@ -20,6 +20,14 @@
 - **📱 Responsive** - Funciona perfectamente en escritorio, tablet y móvil
 - **⚡ Rápido** - Construido con Next.js 16 y React 19 para rendimiento óptimo
 
+## Captura de Pantalla
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/CNSeniorious000/zai-coding-plan-dashboard/main/.github/screenshots/screenshot-es-dark.webp">
+  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/CNSeniorious000/zai-coding-plan-dashboard/main/.github/screenshots/screenshot-es-light.webp">
+  <img alt="Captura de pantalla del Panel de Z.AI Usage" src="https://raw.githubusercontent.com/CNSeniorious000/zai-coding-plan-dashboard/main/.github/screenshots/screenshot-es-dark.webp">
+</picture>
+
 ## Stack Tecnológico
 
 | Tecnología | Descripción |

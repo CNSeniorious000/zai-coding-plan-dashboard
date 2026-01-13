@@ -20,6 +20,14 @@
 - **📱 Responsive** - Funktioniert perfekt auf Desktop, Tablet und Mobil
 - **⚡ Schnell** - Gebaut mit Next.js 16 und React 19 für optimale Leistung
 
+## Screenshot
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/CNSeniorious000/zai-coding-plan-dashboard/main/.github/screenshots/screenshot-de-dark.webp">
+  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/CNSeniorious000/zai-coding-plan-dashboard/main/.github/screenshots/screenshot-de-light.webp">
+  <img alt="Z.AI Usage Dashboard Screenshot" src="https://raw.githubusercontent.com/CNSeniorious000/zai-coding-plan-dashboard/main/.github/screenshots/screenshot-de-dark.webp">
+</picture>
+
 ## Tech Stack
 
 | Technologie | Beschreibung |
