@@ -1,36 +1,140 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Z.AI Usage Dashboard
 
-## Getting Started
+A modern Next.js dashboard for monitoring Z.AI API usage with real-time analytics and multi-language support.
 
-First, run the development server:
+## Features
+
+- **Real-time Usage Tracking** - Monitor model calls, token usage, and tool performance
+- **Quota Management** - Visual progress bars for limits (5-hour tokens, monthly MCP usage)
+- **Time-series Analytics** - Interactive charts showing usage trends over time
+- **Multi-language Support** - 7 locales (English, Chinese, Japanese, Korean, Spanish, French, German)
+- **Dark/Light Mode** - Material You-inspired design with theme toggle
+- **API Key Validation** - Secure key storage with automatic validation
+
+## Tech Stack
+
+- **Next.js 16** - App Router with React 19
+- **TypeScript** - Full type safety
+- **Tailwind CSS v4** - Utility-first styling
+- **Recharts** - Data visualization
+- **next-intl** - Internationalization
+- **Radix UI** - Accessible components
+
+## Quick Start
 
 ```bash
+# Install dependencies
+npm install
+
+# Start development server
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000)
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## API Reference
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### POST /api/usage
 
-## Learn More
+Fetch usage statistics from Z.AI API.
 
-To learn more about Next.js, take a look at the following resources:
+**Request Body:**
+```json
+{
+  "apiKey": "string (required) - Z.AI API key in format [hex32].[alphanum16]",
+  "startTime": "string (optional) - ISO format start time",
+  "endTime": "string (optional) - ISO format end time"
+}
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+**Response:**
+```json
+{
+  "modelUsage": {
+    "timeSeries": [
+      {
+        "time": "14:00",
+        "fullTime": "2026-01-13 14:00:00",
+        "calls": 1234,
+        "tokens": 567890
+      }
+    ],
+    "totalCalls": 50000,
+    "totalTokens": 10000000
+  },
+  "toolUsage": [
+    {
+      "tool": "browser",
+      "callCount": 150,
+      "successCount": 145,
+      "failureCount": 5
+    }
+  ],
+  "quotaLimit": {
+    "limits": [
+      {
+        "type": "Token Usage (5 Hour)",
+        "percentage": 65,
+        "currentUsage": 650000,
+        "total": 1000000,
+        "remaining": 350000,
+        "nextResetTime": 1736812800000
+      },
+      {
+        "type": "MCP Usage (1 Month)",
+        "percentage": 42,
+        "currentUsage": 84,
+        "total": 200,
+        "remaining": 116,
+        "usageDetails": [...]
+      }
+    ]
+  }
+}
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Development
 
-## Deploy on Vercel
+```bash
+# Build for production
+npm run build
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+# Start production server
+npm start
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+# Run linter
+npm run lint
+```
+
+## Project Structure
+
+```
+src/
+├── app/
+│   ├── [locale]/          # Localized routes
+│   │   ├── page.tsx       # Main dashboard
+│   │   └── docs/          # Documentation
+│   └── api/
+│       └── usage/
+│           └── route.ts   # Usage API endpoint
+├── components/
+│   ├── Dashboard.tsx      # Main dashboard component
+│   ├── UsageCharts.tsx    # Data visualization
+│   └── ui/                # Reusable UI components
+├── i18n/                  # Internationalization config
+└── lib/                   # Utilities
+```
+
+## API Key Format
+
+Valid Z.AI API keys follow the pattern: `[a-f0-9]{32}\.[A-Za-z0-9]{16}`
+
+Example: `1a2b3c4d5e6f7890abcdef1234567890.ABC123def456`
+
+## Documentation
+
+Full documentation available at `/docs` in the app.
+
+## License
+
+Private project.
