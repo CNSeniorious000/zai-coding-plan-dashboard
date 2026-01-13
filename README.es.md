@@ -37,7 +37,7 @@
 
 ```bash
 # Clonar repositorio
-git clone https://github.com/yourusername/zai-coding-plan-dashboard.git
+git clone https://github.com/CNSeniorious000/zai-coding-plan-dashboard.git
 
 # Navegar al proyecto
 cd zai-coding-plan-dashboard

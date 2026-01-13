@@ -58,7 +58,7 @@ export default function Home() {
               </Button>
               <Button variant="ghost" size="sm" className="rounded-full h-8 px-3 text-xs" asChild>
                 <a
-                  href="https://github.com/zai-org"
+                  href="https://github.com/CNSeniorious000/zai-coding-plan-dashboard"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center gap-1.5"

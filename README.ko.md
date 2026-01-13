@@ -37,7 +37,7 @@
 
 ```bash
 # 저장소 복제
-git clone https://github.com/yourusername/zai-coding-plan-dashboard.git
+git clone https://github.com/CNSeniorious000/zai-coding-plan-dashboard.git
 
 # 프로젝트 디렉토리로 이동
 cd zai-coding-plan-dashboard

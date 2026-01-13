@@ -37,7 +37,7 @@
 
 ```bash
 # Cloner le dépôt
-git clone https://github.com/yourusername/zai-coding-plan-dashboard.git
+git clone https://github.com/CNSeniorious000/zai-coding-plan-dashboard.git
 
 # Naviguer vers le projet
 cd zai-coding-plan-dashboard

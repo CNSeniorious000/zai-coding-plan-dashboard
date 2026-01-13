@@ -37,7 +37,7 @@
 
 ```bash
 # 克隆仓库
-git clone https://github.com/yourusername/zai-coding-plan-dashboard.git
+git clone https://github.com/CNSeniorious000/zai-coding-plan-dashboard.git
 
 # 进入项目目录
 cd zai-coding-plan-dashboard

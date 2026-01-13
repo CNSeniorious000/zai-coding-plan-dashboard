@@ -37,7 +37,7 @@
 
 ```bash
 # リポジトリをクローン
-git clone https://github.com/yourusername/zai-coding-plan-dashboard.git
+git clone https://github.com/CNSeniorious000/zai-coding-plan-dashboard.git
 
 # プロジェクトディレクトリに移動
 cd zai-coding-plan-dashboard
