@@ -73,6 +73,9 @@ export function UsageCharts({ modelUsage, quotaLimits }: UsageChartsProps) {
     areaGradientEnd: isDark ? 'rgba(180, 160, 212, 0.02)' : 'rgba(124, 92, 175, 0)',
     bar: isDark ? '#7eb8a8' : '#4a9080',
     pieMuted: isDark ? 'rgba(148, 130, 180, 0.2)' : 'rgba(103, 80, 164, 0.12)',
+    // Cursor colors for hover state
+    cursorLine: isDark ? 'rgba(180, 160, 212, 0.25)' : 'rgba(124, 92, 175, 0.2)',
+    cursorFill: isDark ? 'rgba(148, 130, 180, 0.08)' : 'rgba(103, 80, 164, 0.06)',
   };
 
   const quotaData = quotaLimits?.map((item) => ({
@@ -135,6 +138,7 @@ export function UsageCharts({ modelUsage, quotaLimits }: UsageChartsProps) {
                       fontSize: '11px',
                       padding: '6px 10px',
                     }}
+                    cursor={{ stroke: colors.cursorLine, strokeWidth: 1 }}
                     formatter={(value: number | undefined) => [`${value?.toLocaleString() ?? '0'} tokens`, t('charts.usage')]}
                     labelFormatter={(label: string) => t('charts.time', { time: label })}
                     labelStyle={{ color: colors.tooltipText, fontSize: '10px' }}
@@ -189,6 +193,7 @@ export function UsageCharts({ modelUsage, quotaLimits }: UsageChartsProps) {
                       fontSize: '11px',
                       padding: '6px 10px',
                     }}
+                    cursor={{ fill: colors.cursorFill }}
                     formatter={(value: number | undefined) => [`${value?.toLocaleString() ?? '0'} ${t('charts.calls')}`, t('charts.usage')]}
                     labelFormatter={(label: string) => t('charts.time', { time: label })}
                     labelStyle={{ color: colors.tooltipText, fontSize: '10px' }}
