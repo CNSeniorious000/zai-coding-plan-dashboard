@@ -1,73 +1,168 @@
 ---
 title: FAQ
 description: Frequently asked questions about Z.AI Usage Dashboard
+icon: CircleQuestionMark
 ---
 
-# Frequently Asked Questions
+Find answers to common questions about the Z.AI Usage Dashboard.
 
 ## General
 
-### What is the Z.AI Usage Dashboard?
+<Accordions>
+<Accordion title="What is the Z.AI Usage Dashboard?">
 
 The Z.AI Usage Dashboard is a web application that helps you monitor your GLM Coding Plan usage and quota. It provides real-time statistics and visualizations of your token consumption.
 
-### Is my API key stored?
+**Key features:**
+- Real-time quota monitoring
+- Model usage breakdown
+- Tool call analytics
+- Visual charts and graphs
 
-No, your API key is only used to make requests to Z.AI servers and is not stored on our servers. It's kept temporarily in your browser's memory during your session.
+</Accordion>
 
-### How often does the quota reset?
+<Accordion title="Is my API key stored?">
 
-The token quota resets every 5 hours. The exact reset time depends on when your current cycle started.
+<Callout type="info">
+Your privacy is protected.
+</Callout>
+
+No, your API key is only used to make requests to Z.AI servers and is **not stored on our servers**. It's kept temporarily in your browser's `localStorage` for convenience.
+
+</Accordion>
+
+<Accordion title="How often does the quota reset?">
+
+The token quota resets every **5 hours**. The exact reset time depends on when your current cycle started. You can see the reset time displayed on the dashboard.
+
+</Accordion>
+</Accordions>
 
 ## Usage
 
-### Why am I seeing "No data available"?
+<Accordions>
+<Accordion title='Why am I seeing "No data available"?'>
 
 This could happen if:
-- You haven't made any API calls in the selected time period
-- Your API key is invalid or expired
-- There's a temporary issue with the Z.AI API
 
-### What counts towards my quota?
+1. You haven't made any API calls in the selected time period
+2. Your API key is invalid or expired
+3. There's a temporary issue with the Z.AI API
+
+**Try these solutions:**
+- Verify your API key is correct
+- Check if you have an active subscription
+- Wait a few minutes and try again
+
+</Accordion>
+
+<Accordion title="What counts towards my quota?">
+
+The following activities count towards your token quota:
 
 - All chat completions with GLM models
 - Both input and output tokens
 - Tool calls when using coding assistants
+- System prompts and context
 
-### Can I use this dashboard with the free tier?
+</Accordion>
 
-This dashboard is designed for paid Coding Plan subscribers. Free tier users may have limited access to usage statistics.
+<Accordion title="Can I use this dashboard with the free tier?">
+
+This dashboard is designed for **paid Coding Plan subscribers**. Free tier users may have limited access to usage statistics through the API.
+
+</Accordion>
+</Accordions>
 
 ## Technical
 
-### What browsers are supported?
+<Accordions>
+<Accordion title="What browsers are supported?">
 
 The dashboard works on all modern browsers:
-- Chrome (recommended)
-- Firefox
-- Safari
-- Edge
 
-### Is the source code available?
+<Cards>
+<Card title="Chrome" icon={<CheckCircle className="text-green-500" />}>
+Recommended for best experience
+</Card>
+<Card title="Firefox" icon={<CheckCircle className="text-green-500" />}>
+Fully supported
+</Card>
+<Card title="Safari" icon={<CheckCircle className="text-green-500" />}>
+Fully supported
+</Card>
+<Card title="Edge" icon={<CheckCircle className="text-green-500" />}>
+Fully supported
+</Card>
+</Cards>
 
-Yes, this project is open source. You can find the code and contribute on GitHub.
+</Accordion>
 
-### How can I report bugs or request features?
+<Accordion title="Is the source code available?">
 
-Please open an issue on our GitHub repository with a detailed description of the bug or feature request.
+Yes! This project is **open source**. You can find the code on GitHub, report issues, and contribute improvements.
+
+</Accordion>
+
+<Accordion title="How can I report bugs or request features?">
+
+Please open an issue on our GitHub repository with:
+
+1. A detailed description of the bug or feature
+2. Steps to reproduce (for bugs)
+3. Expected vs actual behavior
+4. Screenshots if applicable
+
+</Accordion>
+</Accordions>
 
 ## Plans & Billing
 
-### How do I upgrade my plan?
+<Accordions>
+<Accordion title="How do I upgrade my plan?">
 
-1. Go to [Z.AI Subscription Page](https://z.ai/manage-apikey/subscription)
-2. Select your desired plan
-3. Complete the payment process
+<Steps>
+<Step>
 
-### What payment methods are accepted?
+### Visit Subscription Page
 
-Z.AI accepts major credit cards and other payment methods. Check the subscription page for current options.
+Go to [Z.AI Subscription Page](https://z.ai/manage-apikey/subscription)
 
-### Can I get a refund?
+</Step>
 
-Please contact Z.AI support directly for refund inquiries.
+<Step>
+
+### Select Your Plan
+
+Choose from Lite, Pro, or Max based on your needs
+
+</Step>
+
+<Step>
+
+### Complete Payment
+
+Follow the checkout process to activate your new plan
+
+</Step>
+</Steps>
+
+</Accordion>
+
+<Accordion title="What payment methods are accepted?">
+
+Z.AI accepts:
+
+- Major credit cards (Visa, Mastercard, Amex)
+- Other regional payment methods
+
+Check the subscription page for current options in your region.
+
+</Accordion>
+
+<Accordion title="Can I get a refund?">
+
+Please contact Z.AI support directly for refund inquiries. Refund policies may vary based on your subscription terms and usage.
+
+</Accordion>
+</Accordions>

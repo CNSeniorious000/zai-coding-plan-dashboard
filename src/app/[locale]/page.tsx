@@ -51,8 +51,8 @@ export default function Home() {
                   <span className="hidden sm:inline">GitHub</span>
                 </a>
               </Button>
-              <LanguageSwitcher />
-              <ModeToggle />
+              <LanguageSwitcher align="end" />
+              <ModeToggle align="end" />
             </nav>
           </div>
         </div>

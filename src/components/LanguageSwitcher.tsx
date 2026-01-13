@@ -22,7 +22,7 @@ const localeNames: Record<string, string> = {
   de: 'Deutsch',
 };
 
-export function LanguageSwitcher() {
+export function LanguageSwitcher({ align = "start" }: { align?: "start" | "end" } = {}) {
   const locale = useLocale();
   const pathname = usePathname();
   const router = useRouter();
@@ -41,7 +41,7 @@ export function LanguageSwitcher() {
           <span className="hidden sm:inline">{currentLocaleName}</span>
         </Button>
       </DropdownMenuTrigger>
-      <DropdownMenuContent align="end" className="min-w-[160px]">
+      <DropdownMenuContent align={align} className="min-w-[160px]">
         {routing.locales.map((loc) => (
           <DropdownMenuItem
             key={loc}

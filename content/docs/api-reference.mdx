@@ -1,9 +1,8 @@
 ---
 title: API Reference
 description: Technical documentation for the Z.AI Usage API endpoints
+icon: Code
 ---
-
-# API Reference
 
 This page documents the Z.AI API endpoints used by the dashboard.
 
@@ -15,6 +14,10 @@ All API requests require authentication using a Bearer token:
 Authorization: Bearer YOUR_API_KEY
 ```
 
+<Callout type="warn">
+Keep your API key secure and never expose it in client-side code.
+</Callout>
+
 ## Base URL
 
 ```
@@ -22,6 +25,9 @@ https://api.z.ai
 ```
 
 ## Endpoints
+
+<Tabs items={['Model Usage', 'Tool Usage', 'Quota Limit']}>
+<Tab value="Model Usage">
 
 ### Get Model Usage
 
@@ -54,6 +60,9 @@ GET /api/monitor/usage/model-usage
 }
 ```
 
+</Tab>
+<Tab value="Tool Usage">
+
 ### Get Tool Usage
 
 Retrieve tool usage statistics.
@@ -80,6 +89,9 @@ Same as Model Usage endpoint.
   ]
 }
 ```
+
+</Tab>
+<Tab value="Quota Limit">
 
 ### Get Quota Limit
 
@@ -110,18 +122,29 @@ GET /api/monitor/usage/quota/limit
 }
 ```
 
+</Tab>
+</Tabs>
+
 ## Error Handling
 
 The API returns standard HTTP status codes:
 
-| Code | Description |
-|------|-------------|
-| 200 | Success |
-| 400 | Bad Request |
-| 401 | Unauthorized |
-| 429 | Rate Limited |
-| 500 | Server Error |
+| Code | Description | Action |
+|------|-------------|--------|
+| 200 | Success | Request completed successfully |
+| 400 | Bad Request | Check your request parameters |
+| 401 | Unauthorized | Verify your API key |
+| 429 | Rate Limited | Wait before retrying |
+| 500 | Server Error | Try again later |
+
+<Callout type="error">
+If you receive a 401 error, your API key may be invalid or expired. Generate a new one from the Z.AI platform.
+</Callout>
 
 ## Rate Limits
 
 API calls are subject to rate limiting. If you exceed the limit, you'll receive a 429 response.
+
+<Callout type="info">
+The dashboard automatically handles rate limiting by spacing out requests. Manual API usage should implement exponential backoff.
+</Callout>

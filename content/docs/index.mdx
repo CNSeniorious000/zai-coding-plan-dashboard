@@ -1,9 +1,8 @@
 ---
 title: Introduction
 description: Get started with Z.AI Usage Dashboard
+icon: House
 ---
-
-# Z.AI Usage Dashboard
 
 Welcome to the Z.AI Usage Dashboard documentation. This tool helps you monitor your GLM Coding Plan usage and quota in real-time.
 
@@ -21,21 +20,64 @@ The GLM Coding Plan is a subscription package designed specifically for AI-power
 
 ## Features
 
-This dashboard provides:
+<Cards>
+<Card icon={<BarChart3 />} title="Real-time Quota Monitoring">
+See your current token usage and remaining quota with live updates.
+</Card>
 
-- **Real-time Quota Monitoring**: See your current token usage and remaining quota
-- **Model Usage Statistics**: Track which models you're using and how many tokens
-- **Tool Usage Analytics**: Monitor your tool calls and success rates
-- **Visual Charts**: Beautiful visualizations of your usage patterns
+<Card icon={<Cpu />} title="Model Usage Statistics">
+Track which models you're using and how many tokens they consume.
+</Card>
+
+<Card icon={<Wrench />} title="Tool Usage Analytics">
+Monitor your tool calls, success rates, and failure patterns.
+</Card>
+
+<Card icon={<LineChart />} title="Visual Charts">
+Beautiful visualizations of your usage patterns over time.
+</Card>
+</Cards>
 
 ## Quick Start
 
-1. Get your API key from [Z.AI Platform](https://z.ai/manage-apikey/apikey-list)
-2. Enter your API key in the dashboard
-3. Click "Fetch Usage" to view your statistics
+<Steps>
+<Step>
+
+### Get Your API Key
+
+Visit [Z.AI Platform](https://z.ai/manage-apikey/apikey-list) and copy your API key.
+
+</Step>
+
+<Step>
+
+### Enter Your API Key
+
+Paste your API key in the dashboard input field.
+
+</Step>
+
+<Step>
+
+### View Your Statistics
+
+Click **Fetch Usage** to see your real-time usage data and charts.
+
+</Step>
+</Steps>
 
 ## Next Steps
 
-- [Getting Started](/docs/getting-started) - Learn how to use the dashboard
-- [API Reference](/docs/api-reference) - Understand the underlying API
-- [FAQ](/docs/faq) - Common questions and answers
+<Cards>
+<Card href="/docs/getting-started" title="Getting Started" icon={<Rocket />}>
+Learn how to use the dashboard effectively.
+</Card>
+
+<Card href="/docs/api-reference" title="API Reference" icon={<Code />}>
+Understand the underlying API endpoints.
+</Card>
+
+<Card href="/docs/faq" title="FAQ" icon={<CircleHelp />}>
+Common questions and answers.
+</Card>
+</Cards>

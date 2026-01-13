@@ -92,17 +92,20 @@ export function Dashboard({ onDataLoaded }: DashboardProps) {
       const result = await response.json();
 
       if (!response.ok) {
-        throw new Error(result.error || t('errors.fetchFailed'));
+        // Use error from API or a generic key (will be translated when displayed)
+        throw new Error(result.error || 'FETCH_FAILED');
       }
 
       setData(result);
       onDataLoaded?.(result);
     } catch (err) {
-      setError(err instanceof Error ? err.message : t('errors.fetchFailed'));
+      // Store error message/key, will be translated when displayed
+      const errorMsg = err instanceof Error ? err.message : 'FETCH_FAILED';
+      setError(errorMsg);
     } finally {
       setLoading(false);
     }
-  }, [onDataLoaded, t]);
+  }, [onDataLoaded]);
 
   // Load API key from localStorage on mount and auto-fetch if valid
   useEffect(() => {
@@ -220,7 +223,9 @@ export function Dashboard({ onDataLoaded }: DashboardProps) {
         <Card className="border-destructive/50 bg-destructive/5">
           <CardContent className="flex items-center gap-2">
             <AlertCircle className="w-3.5 h-3.5 text-destructive" />
-            <p className="text-destructive text-xs">{error}</p>
+            <p className="text-destructive text-xs">
+              {error === 'FETCH_FAILED' ? t('errors.fetchFailed') : error}
+            </p>
           </CardContent>
         </Card>
       )}

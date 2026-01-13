@@ -1,0 +1,168 @@
+---
+title: 常见问题
+description: Z.AI 使用仪表板的常见问题解答
+icon: CircleQuestionMark
+---
+
+查找有关 Z.AI 使用仪表板的常见问题解答。
+
+## 常规
+
+<Accordions>
+<Accordion title="什么是 Z.AI 使用仪表板？">
+
+Z.AI 使用仪表板是一个 Web 应用程序，帮助您监控 GLM Coding Plan 的使用情况和配额。它提供实时的令牌消耗统计和可视化。
+
+**主要功能：**
+- 实时配额监控
+- 模型使用情况分析
+- 工具调用分析
+- 可视化图表
+
+</Accordion>
+
+<Accordion title="我的 API 密钥会被存储吗？">
+
+<Callout type="info">
+您的隐私受到保护。
+</Callout>
+
+不会，您的 API 密钥仅用于向 Z.AI 服务器发出请求，**不会存储在我们的服务器上**。它会临时保存在您浏览器的 `localStorage` 中以方便使用。
+
+</Accordion>
+
+<Accordion title="配额多久重置一次？">
+
+令牌配额每 **5 小时**重置一次。具体的重置时间取决于您当前周期的开始时间。您可以在仪表板上看到重置时间。
+
+</Accordion>
+</Accordions>
+
+## 使用
+
+<Accordions>
+<Accordion title='为什么我看到"没有可用数据"？'>
+
+这可能是因为：
+
+1. 在所选时间段内您没有进行任何 API 调用
+2. 您的 API 密钥无效或已过期
+3. Z.AI API 出现临时问题
+
+**尝试这些解决方案：**
+- 验证您的 API 密钥是否正确
+- 检查您是否有有效订阅
+- 等待几分钟后重试
+
+</Accordion>
+
+<Accordion title="什么会计入我的配额？">
+
+以下活动会计入您的令牌配额：
+
+- 使用 GLM 模型的所有聊天完成
+- 输入和输出令牌
+- 使用编码助手时的工具调用
+- 系统提示和上下文
+
+</Accordion>
+
+<Accordion title="我可以在免费套餐中使用此仪表板吗？">
+
+此仪表板专为**付费 Coding Plan 订阅者**设计。免费套餐用户可能通过 API 访问有限的使用统计信息。
+
+</Accordion>
+</Accordions>
+
+## 技术
+
+<Accordions>
+<Accordion title="支持哪些浏览器？">
+
+仪表板可在所有现代浏览器上运行：
+
+<Cards>
+<Card title="Chrome" icon={<CheckCircle className="text-green-500" />}>
+推荐以获得最佳体验
+</Card>
+<Card title="Firefox" icon={<CheckCircle className="text-green-500" />}>
+完全支持
+</Card>
+<Card title="Safari" icon={<CheckCircle className="text-green-500" />}>
+完全支持
+</Card>
+<Card title="Edge" icon={<CheckCircle className="text-green-500" />}>
+完全支持
+</Card>
+</Cards>
+
+</Accordion>
+
+<Accordion title="源代码可用吗？">
+
+是的！此项目是**开源**的。您可以在 GitHub 上找到代码、报告问题并贡献改进。
+
+</Accordion>
+
+<Accordion title="如何报告错误或请求功能？">
+
+请在我们的 GitHub 仓库上开一个 issue，并提供：
+
+1. 错误或功能的详细描述
+2. 重现步骤（针对错误）
+3. 预期行为与实际行为
+4. 如适用，提供截图
+
+</Accordion>
+</Accordions>
+
+## 计划与账单
+
+<Accordions>
+<Accordion title="如何升级我的计划？">
+
+<Steps>
+<Step>
+
+### 访问订阅页面
+
+前往 [Z.AI 订阅页面](https://z.ai/manage-apikey/subscription)
+
+</Step>
+
+<Step>
+
+### 选择您的计划
+
+根据您的需求从 Lite、Pro 或 Max 中选择
+
+</Step>
+
+<Step>
+
+### 完成付款
+
+按照结账流程激活您的新计划
+
+</Step>
+</Steps>
+
+</Accordion>
+
+<Accordion title="接受哪些付款方式？">
+
+Z.AI 接受：
+
+- 主要信用卡（Visa、Mastercard、Amex）
+- 其他地区性付款方式
+
+请查看订阅页面以了解您所在地区的当前选项。
+
+</Accordion>
+
+<Accordion title="我可以退款吗？">
+
+请直接联系 Z.AI 支持以咨询退款事宜。退款政策可能因您的订阅条款和使用情况而异。
+
+</Accordion>
+</Accordions>
