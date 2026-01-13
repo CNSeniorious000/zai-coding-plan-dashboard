@@ -12,7 +12,7 @@ export default async function Page(props: {
   params: Promise<{ locale: string; slug?: string[] }>;
 }) {
   const params = await props.params;
-  const page = source.getPage(params.slug);
+  const page = source.getPage(params.slug, params.locale);
   if (!page) notFound();
 
   const MDX = page.data.body;
@@ -36,7 +36,7 @@ export async function generateMetadata(props: {
   params: Promise<{ locale: string; slug?: string[] }>;
 }) {
   const params = await props.params;
-  const page = source.getPage(params.slug);
+  const page = source.getPage(params.slug, params.locale);
   if (!page) notFound();
 
   return {
