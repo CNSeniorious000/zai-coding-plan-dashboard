@@ -1,10 +1,10 @@
 'use client';
 
-import { useState } from 'react';
 import { Link } from '@/i18n/routing';
 import { useTranslations } from 'next-intl';
-import { Dashboard, type UsageData } from '@/components/Dashboard';
+import { Dashboard } from '@/components/Dashboard';
 import { UsageCharts } from '@/components/UsageCharts';
+import { useUsage } from '@/components/UsageContext';
 import { ModeToggle } from '@/components/ModeToggle';
 import { LanguageSwitcher } from '@/components/LanguageSwitcher';
 import { BarChart3, BookOpen, Github } from 'lucide-react';
@@ -12,7 +12,7 @@ import { Button } from '@/components/ui/button';
 
 export default function Home() {
   const t = useTranslations();
-  const [usageData, setUsageData] = useState<UsageData | null>(null);
+  const { usageData } = useUsage();
 
   return (
     <div className="min-h-screen bg-background relative overflow-hidden flex flex-col">
@@ -71,12 +71,13 @@ export default function Home() {
         </div>
 
         {/* Dashboard */}
-        <Dashboard onDataLoaded={setUsageData} />
+        <Dashboard />
 
         {/* Charts */}
         {usageData && (
           <div className="mt-4">
             <UsageCharts
+              key={`charts-${usageData.modelUsage?.totalTokens ?? 0}`}
               modelUsage={usageData.modelUsage}
               quotaLimits={usageData.quotaLimit?.limits}
             />

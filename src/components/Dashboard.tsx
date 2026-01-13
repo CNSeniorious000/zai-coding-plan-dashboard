@@ -6,135 +6,45 @@ import { Key, Loader2, RefreshCw, AlertCircle, ClipboardPaste, Eye, EyeOff } fro
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
+import { useUsage } from '@/components/UsageContext';
 
-const API_KEY_STORAGE_KEY = 'zai-api-key';
-const API_KEY_PATTERN = /^[a-f0-9]{32}\.[A-Za-z0-9]{16}$/;
-
-interface TimeSeriesItem {
-  time: string;
-  fullTime: string;
-  calls: number;
-  tokens: number;
-}
-
-interface UsageData {
-  modelUsage?: {
-    timeSeries: TimeSeriesItem[];
-    totalCalls: number;
-    totalTokens: number;
-  } | null;
-  toolUsage?: ToolUsageItem[] | null;
-  quotaLimit?: { limits: QuotaLimitItem[] } | null;
-  error?: string;
-}
-
-interface ToolUsageItem {
-  tool: string;
-  callCount: number;
-  successCount: number;
-  failureCount: number;
-}
-
-interface QuotaLimitItem {
-  type: string;
-  percentage: number;
-  currentUsage?: number;
-  total?: number;
-  remaining?: number;
-  nextResetTime?: number;
-}
-
-interface DashboardProps {
-  onDataLoaded?: (data: UsageData) => void;
-}
-
-export type { UsageData };
-
-export function Dashboard({ onDataLoaded }: DashboardProps) {
+export function Dashboard() {
   const t = useTranslations();
-  const [apiKey, setApiKey] = useState('');
+  const {
+    apiKey,
+    setApiKey,
+    usageData,
+    isValidApiKey,
+    fetchUsage,
+    isLoading,
+  } = useUsage();
+
   const [showApiKey, setShowApiKey] = useState(true);
-  const [loading, setLoading] = useState(false);
-  const [error, setError] = useState<string | null>(null);
-  const [data, setData] = useState<UsageData | null>(null);
-
-  const fetchUsageWithKey = useCallback(async (key: string) => {
-    if (!key.trim() || !API_KEY_PATTERN.test(key)) return;
-
-    setLoading(true);
-    setError(null);
-
-    try {
-      const now = new Date();
-      const startDate = new Date(now.getFullYear(), now.getMonth(), now.getDate() - 1, now.getHours(), 0, 0, 0);
-      const endDate = new Date(now.getFullYear(), now.getMonth(), now.getDate(), now.getHours(), 59, 59, 999);
-
-      const formatDateTime = (date: Date) => {
-        const year = date.getFullYear();
-        const month = String(date.getMonth() + 1).padStart(2, '0');
-        const day = String(date.getDate()).padStart(2, '0');
-        const hours = String(date.getHours()).padStart(2, '0');
-        const minutes = String(date.getMinutes()).padStart(2, '0');
-        const seconds = String(date.getSeconds()).padStart(2, '0');
-        return `${year}-${month}-${day} ${hours}:${minutes}:${seconds}`;
-      };
-
-      const response = await fetch('/api/usage', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          apiKey: key,
-          startTime: formatDateTime(startDate),
-          endTime: formatDateTime(endDate),
-        }),
-      });
-
-      const result = await response.json();
-
-      if (!response.ok) {
-        // Use error from API or a generic key (will be translated when displayed)
-        throw new Error(result.error || 'FETCH_FAILED');
-      }
-
-      setData(result);
-      onDataLoaded?.(result);
-    } catch (err) {
-      // Store error message/key, will be translated when displayed
-      const errorMsg = err instanceof Error ? err.message : 'FETCH_FAILED';
-      setError(errorMsg);
-    } finally {
-      setLoading(false);
-    }
-  }, [onDataLoaded]);
-
-  // Load API key from localStorage on mount and auto-fetch if valid
-  useEffect(() => {
-    const savedKey = localStorage.getItem(API_KEY_STORAGE_KEY);
-    if (savedKey) {
-      setApiKey(savedKey);
-      if (API_KEY_PATTERN.test(savedKey)) {
-        fetchUsageWithKey(savedKey);
-      }
-    }
-  }, [fetchUsageWithKey]);
-
-  // Save API key to localStorage when it changes
-  useEffect(() => {
-    if (apiKey && API_KEY_PATTERN.test(apiKey)) {
-      localStorage.setItem(API_KEY_STORAGE_KEY, apiKey);
-    }
-  }, [apiKey]);
-
-  const isValidApiKey = API_KEY_PATTERN.test(apiKey);
-
-  const fetchUsage = useCallback(() => {
-    fetchUsageWithKey(apiKey);
-  }, [apiKey, fetchUsageWithKey]);
+  const error = usageData?.error;
 
   const formatResetTime = (timestamp: number) => {
     const date = new Date(timestamp);
     return date.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
   };
+
+  // Auto-fetch on mount if API key is already set
+  useEffect(() => {
+    if (isValidApiKey && !usageData && !isLoading) {
+      fetchUsage();
+    }
+  }, [isValidApiKey, usageData, isLoading, fetchUsage]);
+
+  const handlePaste = useCallback(async () => {
+    const text = await navigator.clipboard.readText();
+    if (text) {
+      setApiKey(text);
+      // Validate and fetch after setting the key
+      const API_KEY_PATTERN = /^[a-f0-9]{32}\.[A-Za-z0-9]{16}$/;
+      if (API_KEY_PATTERN.test(text)) {
+        fetchUsage();
+      }
+    }
+  }, [setApiKey, fetchUsage]);
 
   return (
     <div className="space-y-4">
@@ -157,7 +67,7 @@ export function Dashboard({ onDataLoaded }: DashboardProps) {
                 value={apiKey}
                 onChange={(e) => setApiKey(e.target.value)}
                 onKeyDown={(e) => {
-                  if (e.key === 'Enter' && isValidApiKey && !loading) {
+                  if (e.key === 'Enter' && isValidApiKey && !isLoading) {
                     fetchUsage();
                   }
                 }}
@@ -177,15 +87,7 @@ export function Dashboard({ onDataLoaded }: DashboardProps) {
                 variant="outline"
                 size="sm"
                 className="h-8 px-2"
-                onClick={async () => {
-                  const text = await navigator.clipboard.readText();
-                  if (text) {
-                    setApiKey(text);
-                    if (API_KEY_PATTERN.test(text)) {
-                      fetchUsageWithKey(text);
-                    }
-                  }
-                }}
+                onClick={handlePaste}
                 title={t('apiKey.paste')}
               >
                 <ClipboardPaste className="w-3.5 h-3.5" />
@@ -193,11 +95,11 @@ export function Dashboard({ onDataLoaded }: DashboardProps) {
             </div>
             <Button
               onClick={fetchUsage}
-              disabled={loading || !apiKey || !isValidApiKey}
+              disabled={isLoading || !apiKey || !isValidApiKey}
               size="sm"
               className="rounded-full px-3 h-8 text-xs"
             >
-              {loading ? (
+              {isLoading ? (
                 <>
                   <Loader2 className="w-3 h-3 animate-spin" />
                   {t('common.loading')}
@@ -231,9 +133,9 @@ export function Dashboard({ onDataLoaded }: DashboardProps) {
       )}
 
       {/* Quota Overview */}
-      {data?.quotaLimit?.limits && (
+      {usageData?.quotaLimit?.limits && (
         <div className="grid gap-4" style={{ gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))' }}>
-          {data.quotaLimit.limits.map((limit, index) => (
+          {usageData.quotaLimit.limits.map((limit, index) => (
             <Card key={index}>
               <CardHeader>
                 <CardDescription className="text-xs">{limit.type}</CardDescription>
@@ -275,7 +177,7 @@ export function Dashboard({ onDataLoaded }: DashboardProps) {
       )}
 
       {/* Model Usage */}
-      {data?.modelUsage && Array.isArray(data.modelUsage) && data.modelUsage.length > 0 && (
+      {usageData?.modelUsage && Array.isArray(usageData.modelUsage) && usageData.modelUsage.length > 0 && (
         <Card>
           <CardHeader>
             <CardTitle className="text-sm font-medium">{t('modelUsage.title')}</CardTitle>
@@ -293,7 +195,7 @@ export function Dashboard({ onDataLoaded }: DashboardProps) {
                   </tr>
                 </thead>
                 <tbody>
-                  {data.modelUsage.map((item, index) => (
+                  {usageData.modelUsage.map((item, index) => (
                     <tr key={index} className="border-b last:border-0">
                       <td className="py-2 px-4 font-medium">{item.model}</td>
                       <td className="py-2 px-4 text-right tabular-nums">{item.requestCount?.toLocaleString()}</td>
@@ -310,7 +212,7 @@ export function Dashboard({ onDataLoaded }: DashboardProps) {
       )}
 
       {/* Tool Usage */}
-      {data?.toolUsage && Array.isArray(data.toolUsage) && data.toolUsage.length > 0 && (
+      {usageData?.toolUsage && Array.isArray(usageData.toolUsage) && usageData.toolUsage.length > 0 && (
         <Card>
           <CardHeader>
             <CardTitle className="text-sm font-medium">{t('toolUsage.title')}</CardTitle>
@@ -327,7 +229,7 @@ export function Dashboard({ onDataLoaded }: DashboardProps) {
                   </tr>
                 </thead>
                 <tbody>
-                  {data.toolUsage.map((item, index) => (
+                  {usageData.toolUsage.map((item, index) => (
                     <tr key={index} className="border-b last:border-0">
                       <td className="py-2 px-4 font-medium">{item.tool}</td>
                       <td className="py-2 px-4 text-right tabular-nums">{item.callCount?.toLocaleString()}</td>
@@ -347,7 +249,7 @@ export function Dashboard({ onDataLoaded }: DashboardProps) {
       )}
 
       {/* Empty State */}
-      {!data && !loading && !error && (
+      {!usageData && !isLoading && !error && (
         <Card>
           <CardContent className="text-center py-6">
             <Key className="w-6 h-6 mx-auto mb-2 text-muted-foreground/40" />
