@@ -6,6 +6,7 @@ import { defineI18nUI } from 'fumadocs-ui/i18n';
 import { i18n } from '@/lib/i18n';
 import { routing } from '@/i18n/routing';
 import { notFound } from 'next/navigation';
+import SearchDialog from '@/components/SearchDialog';
 
 const { provider } = defineI18nUI(i18n, {
   translations: {
@@ -79,7 +80,7 @@ export default async function LocaleLayout({
 
   return (
     <NextIntlClientProvider messages={messages}>
-      <RootProvider i18n={provider(locale)}>
+      <RootProvider i18n={provider(locale)} search={{ SearchDialog }}>
         {children}
       </RootProvider>
     </NextIntlClientProvider>
