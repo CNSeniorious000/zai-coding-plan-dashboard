@@ -1,0 +1,102 @@
+{
+  "common": {
+    "language": "Idioma",
+    "loading": "Cargando...",
+    "fetch": "Obtener",
+    "refresh": "Actualizar"
+  },
+  "home": {
+    "title": "Panel de Z.AI Coding",
+    "subtitle": "Análisis de Uso & Documentación"
+  },
+  "apiKey": {
+    "title": "API Key",
+    "description": "Tu API key solo se usa para consultar los servidores de Z.AI y no se almacena.",
+    "placeholder": "Ingresa tu API key de Z.AI",
+    "paste": "Pegar del portapapeles",
+    "invalid": "Formato: 32 caracteres hexadecimales + punto + 16 caracteres alfanuméricos"
+  },
+  "quota": {
+    "used": "% usado",
+    "remaining": "restante",
+    "resetsAt": "Reinicia a las {time}"
+  },
+  "modelUsage": {
+    "title": "Uso de Modelos (Últimas 24h)",
+    "model": "Modelo",
+    "requests": "Solicitudes",
+    "input": "Entrada",
+    "output": "Salida",
+    "total": "Total"
+  },
+  "toolUsage": {
+    "title": "Uso de Herramientas (Últimas 24h)",
+    "tool": "Herramienta",
+    "totalCalls": "Llamadas Totales",
+    "success": "Éxitos",
+    "failures": "Fallos"
+  },
+  "charts": {
+    "tokenUsage": "Uso de Tokens a lo Largo del Tiempo",
+    "totalTokens": "Total: {count} tokens",
+    "apiCalls": "Llamadas a API a lo Largo del Tiempo",
+    "totalCalls": "Total: {count} llamadas",
+    "quotaUsage": "Uso de Cuota",
+    "usage": "Uso",
+    "time": "Hora: {time}",
+    "calls": "llamadas",
+    "remaining": "Restante"
+  },
+  "empty": {
+    "title": "Ingresa tu API Key",
+    "description": "Ingresa tu API key y haz clic en \"Obtener\" para ver tus estadísticas de uso."
+  },
+  "errors": {
+    "fetchFailed": "Error al obtener los datos de uso"
+  },
+  "docs": {
+    "title": "Documentación",
+    "nav": {
+      "docs": "Docs",
+      "home": "Inicio",
+      "gettingStarted": "Comenzando",
+      "apiReference": "Referencia de API",
+      "faq": "Preguntas Frecuentes"
+    },
+    "gettingStarted": {
+      "title": "Comenzando",
+      "intro": "Bienvenido al Panel de Z.AI Coding. Este panel te ayuda a rastrear tu uso de API y límites de cuota.",
+      "prerequisites": "Requisitos Previos",
+      "prerequisitesDesc": "Necesitarás una API key de Z.AI para usar este panel.",
+      "step1": "Obtener tu API Key",
+      "step1Desc": "Obtén tu API key desde la plataforma Z.AI.",
+      "step2": "Ingresar tu API Key",
+      "step2Desc": "Pega tu API key en el campo de entrada y haz clic en Obtener.",
+      "step3": "Ver tus Datos",
+      "step3Desc": "Tus estadísticas de uso se mostrarán en tiempo real."
+    },
+    "apiReference": {
+      "title": "Referencia de API",
+      "overview": "El panel usa la Z.AI Usage API para obtener estadísticas.",
+      "endpoint": "Endpoint de Uso",
+      "endpointDesc": "Obtiene datos de uso para un rango de tiempo dado.",
+      "parameters": "Parámetros",
+      "paramApiKey": "apiKey",
+      "paramApiKeyDesc": "Tu API key de Z.AI.",
+      "paramStartTime": "startTime",
+      "paramStartTimeDesc": "Hora de inicio en formato: YYYY-MM-DD HH:mm:ss",
+      "paramEndTime": "endTime",
+      "paramEndTimeDesc": "Hora de finalización en formato: YYYY-MM-DD HH:mm:ss",
+      "response": "Respuesta"
+    },
+    "faq": {
+      "title": "Preguntas Frecuentes",
+      "q1": "¿Se almacena mi API key?",
+      "a1": "No, tu API key solo se almacena en el localStorage de tu navegador y nunca se envía a ningún servidor excepto la API oficial de Z.AI.",
+      "q2": "¿Con qué frecuencia se actualizan los datos?",
+      "a2": "Los datos se obtienen en tiempo real cuando haces clic en el botón Obtener. Puedes actualizar en cualquier momento.",
+      "q3": "¿Qué rango de tiempo se muestra?",
+      "a3": "Por defecto, el panel muestra datos de uso de las últimas 24 horas, agrupados por hora."
+    }
+  }
+}

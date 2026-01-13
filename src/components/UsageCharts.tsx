@@ -1,6 +1,7 @@
 'use client';
 
 import { useTheme } from 'next-themes';
+import { useTranslations } from 'next-intl';
 import { useEffect, useState } from 'react';
 import {
   AreaChart,
@@ -42,6 +43,7 @@ interface UsageChartsProps {
 }
 
 export function UsageCharts({ modelUsage, quotaLimits }: UsageChartsProps) {
+  const t = useTranslations();
   const { resolvedTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
 
@@ -90,9 +92,9 @@ export function UsageCharts({ modelUsage, quotaLimits }: UsageChartsProps) {
       {hasModelData && (
         <Card>
           <CardHeader>
-            <CardTitle className="text-sm font-medium">Token Usage Over Time</CardTitle>
+            <CardTitle className="text-sm font-medium">{t('charts.tokenUsage')}</CardTitle>
             <CardDescription className="text-xs">
-              Total: {modelUsage.totalTokens.toLocaleString()} tokens
+              {t('charts.totalTokens', { count: modelUsage.totalTokens.toLocaleString() })}
             </CardDescription>
           </CardHeader>
           <CardContent>
@@ -132,8 +134,8 @@ export function UsageCharts({ modelUsage, quotaLimits }: UsageChartsProps) {
                       fontSize: '11px',
                       padding: '6px 10px',
                     }}
-                    formatter={(value: number | undefined) => [`${value?.toLocaleString() ?? '0'} tokens`, 'Usage']}
-                    labelFormatter={(label: string) => `Time: ${label}`}
+                    formatter={(value: number | undefined) => [`${value?.toLocaleString() ?? '0'} tokens`, t('charts.usage')]}
+                    labelFormatter={(label: string) => t('charts.time', { time: label })}
                     labelStyle={{ color: colors.tooltipText, fontSize: '10px' }}
                   />
                   <Area
@@ -155,9 +157,9 @@ export function UsageCharts({ modelUsage, quotaLimits }: UsageChartsProps) {
       {hasModelData && (
         <Card>
           <CardHeader>
-            <CardTitle className="text-sm font-medium">API Calls Over Time</CardTitle>
+            <CardTitle className="text-sm font-medium">{t('charts.apiCalls')}</CardTitle>
             <CardDescription className="text-xs">
-              Total: {modelUsage.totalCalls.toLocaleString()} calls
+              {t('charts.totalCalls', { count: modelUsage.totalCalls.toLocaleString() })}
             </CardDescription>
           </CardHeader>
           <CardContent>
@@ -186,8 +188,8 @@ export function UsageCharts({ modelUsage, quotaLimits }: UsageChartsProps) {
                       fontSize: '11px',
                       padding: '6px 10px',
                     }}
-                    formatter={(value: number | undefined) => [`${value?.toLocaleString() ?? '0'} calls`, 'Calls']}
-                    labelFormatter={(label: string) => `Time: ${label}`}
+                    formatter={(value: number | undefined) => [`${value?.toLocaleString() ?? '0'} ${t('charts.calls')}`, t('charts.usage')]}
+                    labelFormatter={(label: string) => t('charts.time', { time: label })}
                     labelStyle={{ color: colors.tooltipText, fontSize: '10px' }}
                   />
                   <Bar
@@ -206,7 +208,7 @@ export function UsageCharts({ modelUsage, quotaLimits }: UsageChartsProps) {
       {hasQuotaData && (
         <Card>
           <CardHeader>
-            <CardTitle className="text-sm font-medium">Quota Usage</CardTitle>
+            <CardTitle className="text-sm font-medium">{t('charts.quotaUsage')}</CardTitle>
           </CardHeader>
           <CardContent>
             <div className="flex flex-col gap-3">
@@ -217,8 +219,8 @@ export function UsageCharts({ modelUsage, quotaLimits }: UsageChartsProps) {
                       <PieChart>
                         <Pie
                           data={[
-                            { name: 'Used', value: item.value },
-                            { name: 'Remaining', value: item.remaining },
+                            { name: t('charts.usage'), value: item.value },
+                            { name: t('charts.remaining'), value: item.remaining },
                           ]}
                           cx="50%"
                           cy="50%"

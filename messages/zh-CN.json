@@ -1,0 +1,102 @@
+{
+  "common": {
+    "language": "语言",
+    "loading": "加载中...",
+    "fetch": "获取",
+    "refresh": "刷新"
+  },
+  "home": {
+    "title": "Z.AI Coding 仪表板",
+    "subtitle": "使用情况分析 & 文档"
+  },
+  "apiKey": {
+    "title": "API 密钥",
+    "description": "您的 API 密钥仅用于查询 Z.AI 服务器，不会被存储。",
+    "placeholder": "输入您的 Z.AI API 密钥",
+    "paste": "从剪贴板粘贴",
+    "invalid": "格式：32 个十六进制字符 + 点 + 16 个字母数字字符"
+  },
+  "quota": {
+    "used": "% 已使用",
+    "remaining": "剩余",
+    "resetsAt": "于 {time} 重置"
+  },
+  "modelUsage": {
+    "title": "模型使用情况（过去 24 小时）",
+    "model": "模型",
+    "requests": "请求",
+    "input": "输入",
+    "output": "输出",
+    "total": "总计"
+  },
+  "toolUsage": {
+    "title": "工具使用情况（过去 24 小时）",
+    "tool": "工具",
+    "totalCalls": "总调用",
+    "success": "成功",
+    "failures": "失败"
+  },
+  "charts": {
+    "tokenUsage": "Token 使用趋势",
+    "totalTokens": "总计：{count} 个 token",
+    "apiCalls": "API 调用趋势",
+    "totalCalls": "总计：{count} 次调用",
+    "quotaUsage": "配额使用情况",
+    "usage": "使用量",
+    "time": "时间：{time}",
+    "calls": "次调用",
+    "remaining": "剩余"
+  },
+  "empty": {
+    "title": "输入您的 API 密钥",
+    "description": "输入您的 API 密钥并点击获取以查看您的使用统计。"
+  },
+  "errors": {
+    "fetchFailed": "获取使用数据失败"
+  },
+  "docs": {
+    "title": "文档",
+    "nav": {
+      "docs": "文档",
+      "home": "首页",
+      "gettingStarted": "快速开始",
+      "apiReference": "API 参考",
+      "faq": "常见问题"
+    },
+    "gettingStarted": {
+      "title": "快速开始",
+      "intro": "欢迎使用 Z.AI Coding 仪表板。本仪表板帮助您追踪 API 使用情况和配额限制。",
+      "prerequisites": "前置要求",
+      "prerequisitesDesc": "您需要一个 Z.AI API 密钥才能使用此仪表板。",
+      "step1": "获取您的 API 密钥",
+      "step1Desc": "从 Z.AI 平台获取您的 API 密钥。",
+      "step2": "输入您的 API 密钥",
+      "step2Desc": "在输入框中粘贴您的 API 密钥并点击获取。",
+      "step3": "查看您的数据",
+      "step3Desc": "您的使用统计将实时显示。"
+    },
+    "apiReference": {
+      "title": "API 参考",
+      "overview": "仪表板使用 Z.AI Usage API 来获取统计数据。",
+      "endpoint": "使用情况端点",
+      "endpointDesc": "获取指定时间范围的使用数据。",
+      "parameters": "参数",
+      "paramApiKey": "apiKey",
+      "paramApiKeyDesc": "您的 Z.AI API 密钥。",
+      "paramStartTime": "startTime",
+      "paramStartTimeDesc": "开始时间，格式：YYYY-MM-DD HH:mm:ss",
+      "paramEndTime": "endTime",
+      "paramEndTimeDesc": "结束时间，格式：YYYY-MM-DD HH:mm:ss",
+      "response": "响应"
+    },
+    "faq": {
+      "title": "常见问题",
+      "q1": "我的 API 密钥会被存储吗？",
+      "a1": "不会，您的 API 密钥仅存储在浏览器的 localStorage 中，除了 Z.AI 官方 API 外不会发送到任何服务器。",
+      "q2": "数据更新频率是多少？",
+      "a2": "当您点击获取按钮时，数据会实时获取。您可以随时刷新。",
+      "q3": "显示的时间范围是什么？",
+      "a3": "默认情况下，仪表板显示过去 24 小时的使用数据，按小时分组。"
+    }
+  }
+}

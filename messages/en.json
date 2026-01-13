@@ -1,0 +1,102 @@
+{
+  "common": {
+    "language": "Language",
+    "loading": "Loading...",
+    "fetch": "Fetch",
+    "refresh": "Refresh"
+  },
+  "home": {
+    "title": "Z.AI Coding Plan Dashboard",
+    "subtitle": "Usage Analytics & Documentation"
+  },
+  "apiKey": {
+    "title": "API Key",
+    "description": "Your API key is only used to query Z.AI servers and is not stored.",
+    "placeholder": "Enter your Z.AI API key",
+    "paste": "Paste from clipboard",
+    "invalid": "Format: 32 hex characters + dot + 16 alphanumeric characters"
+  },
+  "quota": {
+    "used": "% used",
+    "remaining": "remaining",
+    "resetsAt": "Resets at {time}"
+  },
+  "modelUsage": {
+    "title": "Model Usage (Last 24h)",
+    "model": "Model",
+    "requests": "Requests",
+    "input": "Input",
+    "output": "Output",
+    "total": "Total"
+  },
+  "toolUsage": {
+    "title": "Tool Usage (Last 24h)",
+    "tool": "Tool",
+    "totalCalls": "Total Calls",
+    "success": "Success",
+    "failures": "Failures"
+  },
+  "charts": {
+    "tokenUsage": "Token Usage Over Time",
+    "totalTokens": "Total: {count} tokens",
+    "apiCalls": "API Calls Over Time",
+    "totalCalls": "Total: {count} calls",
+    "quotaUsage": "Quota Usage",
+    "usage": "Usage",
+    "time": "Time: {time}",
+    "calls": "calls",
+    "remaining": "Remaining"
+  },
+  "empty": {
+    "title": "Enter your API key",
+    "description": "Enter your API key and click \"Fetch\" to view your usage statistics."
+  },
+  "errors": {
+    "fetchFailed": "Failed to fetch usage data"
+  },
+  "docs": {
+    "title": "Documentation",
+    "nav": {
+      "docs": "Docs",
+      "home": "Home",
+      "gettingStarted": "Getting Started",
+      "apiReference": "API Reference",
+      "faq": "FAQ"
+    },
+    "gettingStarted": {
+      "title": "Getting Started",
+      "intro": "Welcome to the Z.AI Coding Plan Dashboard. This dashboard helps you track your API usage and quota limits.",
+      "prerequisites": "Prerequisites",
+      "prerequisitesDesc": "You'll need a Z.AI API key to use this dashboard.",
+      "step1": "Getting Your API Key",
+      "step1Desc": "Obtain your API key from the Z.AI platform.",
+      "step2": "Enter Your API Key",
+      "step2Desc": "Paste your API key in the input field and click Fetch.",
+      "step3": "View Your Data",
+      "step3Desc": "Your usage statistics will be displayed in real-time."
+    },
+    "apiReference": {
+      "title": "API Reference",
+      "overview": "The dashboard uses the Z.AI Usage API to fetch statistics.",
+      "endpoint": "Usage Endpoint",
+      "endpointDesc": "Fetch usage data for a given time range.",
+      "parameters": "Parameters",
+      "paramApiKey": "apiKey",
+      "paramApiKeyDesc": "Your Z.AI API key.",
+      "paramStartTime": "startTime",
+      "paramStartTimeDesc": "Start time in format: YYYY-MM-DD HH:mm:ss",
+      "paramEndTime": "endTime",
+      "paramEndTimeDesc": "End time in format: YYYY-MM-DD HH:mm:ss",
+      "response": "Response"
+    },
+    "faq": {
+      "title": "Frequently Asked Questions",
+      "q1": "Is my API key stored?",
+      "a1": "No, your API key is only stored in your browser's localStorage and is never sent to any server except Z.AI's official API.",
+      "q2": "How often is the data updated?",
+      "a2": "Data is fetched in real-time when you click the Fetch button. You can refresh at any time.",
+      "q3": "What time range is shown?",
+      "a3": "By default, the dashboard shows usage data for the last 24 hours, grouped by hour."
+    }
+  }
+}

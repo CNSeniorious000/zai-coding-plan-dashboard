@@ -1,0 +1,102 @@
+{
+  "common": {
+    "language": "Langue",
+    "loading": "Chargement...",
+    "fetch": "Récupérer",
+    "refresh": "Actualiser"
+  },
+  "home": {
+    "title": "Tableau de Bord Z.AI Coding",
+    "subtitle": "Analyse d'Utilisation & Documentation"
+  },
+  "apiKey": {
+    "title": "Clé API",
+    "description": "Votre clé API est uniquement utilisée pour interroger les serveurs Z.AI et n'est pas stockée.",
+    "placeholder": "Entrez votre clé API Z.AI",
+    "paste": "Coller depuis le presse-papiers",
+    "invalid": "Format : 32 caractères hexadécimaux + point + 16 caractères alphanumériques"
+  },
+  "quota": {
+    "used": "% utilisé",
+    "remaining": "restant",
+    "resetsAt": "Réinitialisation à {time}"
+  },
+  "modelUsage": {
+    "title": "Utilisation des Modèles (Dernières 24h)",
+    "model": "Modèle",
+    "requests": "Requêtes",
+    "input": "Entrée",
+    "output": "Sortie",
+    "total": "Total"
+  },
+  "toolUsage": {
+    "title": "Utilisation des Outils (Dernières 24h)",
+    "tool": "Outil",
+    "totalCalls": "Appels Totaux",
+    "success": "Succès",
+    "failures": "Échecs"
+  },
+  "charts": {
+    "tokenUsage": "Utilisation des Tokens dans le Temps",
+    "totalTokens": "Total : {count} tokens",
+    "apiCalls": "Appels API dans le Temps",
+    "totalCalls": "Total : {count} appels",
+    "quotaUsage": "Utilisation du Quota",
+    "usage": "Utilisation",
+    "time": "Heure : {time}",
+    "calls": "appels",
+    "remaining": "Restant"
+  },
+  "empty": {
+    "title": "Entrez votre Clé API",
+    "description": "Entrez votre clé API et cliquez sur \"Récupérer\" pour voir vos statistiques d'utilisation."
+  },
+  "errors": {
+    "fetchFailed": "Échec de la récupération des données d'utilisation"
+  },
+  "docs": {
+    "title": "Documentation",
+    "nav": {
+      "docs": "Docs",
+      "home": "Accueil",
+      "gettingStarted": "Prise en Main",
+      "apiReference": "Référence API",
+      "faq": "FAQ"
+    },
+    "gettingStarted": {
+      "title": "Prise en Main",
+      "intro": "Bienvenue sur le Tableau de Bord Z.AI Coding. Ce tableau de bord vous aide à suivre votre utilisation de l'API et vos limites de quota.",
+      "prerequisites": "Prérequis",
+      "prerequisitesDesc": "Vous aurez besoin d'une clé API Z.AI pour utiliser ce tableau de bord.",
+      "step1": "Obtenir votre Clé API",
+      "step1Desc": "Obtenez votre clé API depuis la plateforme Z.AI.",
+      "step2": "Entrer votre Clé API",
+      "step2Desc": "Collez votre clé API dans le champ de saisie et cliquez sur Récupérer.",
+      "step3": "Voir vos Données",
+      "step3Desc": "Vos statistiques d'utilisation seront affichées en temps réel."
+    },
+    "apiReference": {
+      "title": "Référence API",
+      "overview": "Le tableau de bord utilise l'API Z.AI Usage pour récupérer les statistiques.",
+      "endpoint": "Endpoint d'Utilisation",
+      "endpointDesc": "Récupère les données d'utilisation pour une plage de temps donnée.",
+      "parameters": "Paramètres",
+      "paramApiKey": "apiKey",
+      "paramApiKeyDesc": "Votre clé API Z.AI.",
+      "paramStartTime": "startTime",
+      "paramStartTimeDesc": "Heure de début au format : YYYY-MM-DD HH:mm:ss",
+      "paramEndTime": "endTime",
+      "paramEndTimeDesc": "Heure de fin au format : YYYY-MM-DD HH:mm:ss",
+      "response": "Réponse"
+    },
+    "faq": {
+      "title": "Questions Fréquentes",
+      "q1": "Ma clé API est-elle stockée ?",
+      "a1": "Non, votre clé API est uniquement stockée dans le localStorage de votre navigateur et n'est jamais envoyée à aucun serveur sauf l'API officielle de Z.AI.",
+      "q2": "À quelle fréquence les données sont-elles mises à jour ?",
+      "a2": "Les données sont récupérées en temps réel lorsque vous cliquez sur le bouton Récupérer. Vous pouvez actualiser à tout moment.",
+      "q3": "Quelle plage de temps est affichée ?",
+      "a3": "Par défaut, le tableau de bord affiche les données d'utilisation des dernières 24 heures, groupées par heure."
+    }
+  }
+}

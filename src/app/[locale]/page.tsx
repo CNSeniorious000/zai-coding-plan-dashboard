@@ -1,10 +1,12 @@
 'use client';
 
 import { useState } from 'react';
-import Link from 'next/link';
+import { Link } from '@/i18n/routing';
+import { useTranslations } from 'next-intl';
 import { Dashboard } from '@/components/Dashboard';
 import { UsageCharts } from '@/components/UsageCharts';
 import { ModeToggle } from '@/components/ModeToggle';
+import { LanguageSwitcher } from '@/components/LanguageSwitcher';
 import { BarChart3, BookOpen, Github } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
@@ -25,6 +27,7 @@ interface UsageData {
 }
 
 export default function Home() {
+  const t = useTranslations();
   const [usageData, setUsageData] = useState<UsageData | null>(null);
 
   return (
@@ -50,7 +53,7 @@ export default function Home() {
               <Button variant="ghost" size="sm" className="rounded-full h-8 px-3 text-xs" asChild>
                 <Link href="/docs" className="flex items-center gap-1.5">
                   <BookOpen className="w-3.5 h-3.5" />
-                  <span className="hidden sm:inline">Docs</span>
+                  <span className="hidden sm:inline">{t('docs.nav.docs')}</span>
                 </Link>
               </Button>
               <Button variant="ghost" size="sm" className="rounded-full h-8 px-3 text-xs" asChild>
@@ -64,6 +67,7 @@ export default function Home() {
                   <span className="hidden sm:inline">GitHub</span>
                 </a>
               </Button>
+              <LanguageSwitcher />
               <ModeToggle />
             </nav>
           </div>
@@ -75,10 +79,10 @@ export default function Home() {
         {/* Hero Section */}
         <div className="mb-8">
           <h2 className="text-xl font-medium tracking-tight mb-1.5 bg-gradient-to-b from-foreground to-foreground/70 bg-clip-text text-transparent">
-            Monitor Your Usage
+            {t('home.title')}
           </h2>
           <p className="text-sm text-muted-foreground">
-            Track your Z.AI Coding Plan quota and usage statistics.
+            {t('home.subtitle')}
           </p>
         </div>
 
@@ -103,7 +107,7 @@ export default function Home() {
             <p>Z.AI Usage Dashboard</p>
             <div className="flex items-center gap-5">
               <Link href="/docs" className="hover:text-foreground transition-colors">
-                Documentation
+                {t('docs.title')}
               </Link>
               <a
                 href="https://z.ai"

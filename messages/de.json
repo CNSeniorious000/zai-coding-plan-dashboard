@@ -1,0 +1,102 @@
+{
+  "common": {
+    "language": "Sprache",
+    "loading": "Laden...",
+    "fetch": "Abrufen",
+    "refresh": "Aktualisieren"
+  },
+  "home": {
+    "title": "Z.AI Coding Dashboard",
+    "subtitle": "Nutzungsanalyse & Dokumentation"
+  },
+  "apiKey": {
+    "title": "API-Schlüssel",
+    "description": "Ihr API-Schlüssel wird nur zum Abfragen der Z.AI-Server verwendet und nicht gespeichert.",
+    "placeholder": "Geben Sie Ihren Z.AI API-Schlüssel ein",
+    "paste": "Aus Zwischenablage einfügen",
+    "invalid": "Format: 32 hexadezimale Zeichen + Punkt + 16 alphanumerische Zeichen"
+  },
+  "quota": {
+    "used": "% verwendet",
+    "remaining": "verbleibend",
+    "resetsAt": "Zurücksetzung um {time}"
+  },
+  "modelUsage": {
+    "title": "Modellnutzung (Letzte 24h)",
+    "model": "Modell",
+    "requests": "Anfragen",
+    "input": "Eingabe",
+    "output": "Ausgabe",
+    "total": "Gesamt"
+  },
+  "toolUsage": {
+    "title": "Tool-Nutzung (Letzte 24h)",
+    "tool": "Tool",
+    "totalCalls": "Gesamtaufrufe",
+    "success": "Erfolg",
+    "failures": "Fehler"
+  },
+  "charts": {
+    "tokenUsage": "Token-Nutzung im Zeitverlauf",
+    "totalTokens": "Gesamt: {count} Tokens",
+    "apiCalls": "API-Aufrufe im Zeitverlauf",
+    "totalCalls": "Gesamt: {count} Aufrufe",
+    "quotaUsage": "Quota-Nutzung",
+    "usage": "Nutzung",
+    "time": "Zeit: {time}",
+    "calls": "Aufrufe",
+    "remaining": "Verbleibend"
+  },
+  "empty": {
+    "title": "API-Schlüssel eingeben",
+    "description": "Geben Sie Ihren API-Schlüssel ein und klicken Sie auf \"Abrufen\", um Ihre Nutzungsstatistiken anzuzeigen."
+  },
+  "errors": {
+    "fetchFailed": "Fehler beim Abrufen der Nutzungsdaten"
+  },
+  "docs": {
+    "title": "Dokumentation",
+    "nav": {
+      "docs": "Dokumentation",
+      "home": "Startseite",
+      "gettingStarted": "Erste Schritte",
+      "apiReference": "API-Referenz",
+      "faq": "FAQ"
+    },
+    "gettingStarted": {
+      "title": "Erste Schritte",
+      "intro": "Willkommen beim Z.AI Coding Dashboard. Dieses Dashboard hilft Ihnen dabei, Ihre API-Nutzung und Quota-Limits zu verfolgen.",
+      "prerequisites": "Voraussetzungen",
+      "prerequisitesDesc": "Sie benötigen einen Z.AI API-Schlüssel, um dieses Dashboard zu verwenden.",
+      "step1": "API-Schlüssel erhalten",
+      "step1Desc": "Erhalten Sie Ihren API-Schlüssel von der Z.AI-Plattform.",
+      "step2": "API-Schlüssel eingeben",
+      "step2Desc": "Fügen Sie Ihren API-Schlüssel in das Eingabefeld ein und klicken Sie auf Abrufen.",
+      "step3": "Daten anzeigen",
+      "step3Desc": "Ihre Nutzungsstatistiken werden in Echtzeit angezeigt."
+    },
+    "apiReference": {
+      "title": "API-Referenz",
+      "overview": "Das Dashboard verwendet die Z.AI Usage API, um Statistiken abzurufen.",
+      "endpoint": "Nutzungs-Endpunkt",
+      "endpointDesc": "Ruft Nutzungsdaten für einen angegebenen Zeitraum ab.",
+      "parameters": "Parameter",
+      "paramApiKey": "apiKey",
+      "paramApiKeyDesc": "Ihr Z.AI API-Schlüssel.",
+      "paramStartTime": "startTime",
+      "paramStartTimeDesc": "Startzeit im Format: YYYY-MM-DD HH:mm:ss",
+      "paramEndTime": "endTime",
+      "paramEndTimeDesc": "Endzeit im Format: YYYY-MM-DD HH:mm:ss",
+      "response": "Antwort"
+    },
+    "faq": {
+      "title": "Häufig gestellte Fragen",
+      "q1": "Wird mein API-Schlüssel gespeichert?",
+      "a1": "Nein, Ihr API-Schlüssel wird nur im localStorage Ihres Browsers gespeichert und niemals an einen Server außer der offiziellen Z.AI-API gesendet.",
+      "q2": "Wie oft werden die Daten aktualisiert?",
+      "a2": "Die Daten werden in Echtzeit abgerufen, wenn Sie auf die Schaltfläche Abrufen klicken. Sie können jederzeit aktualisieren.",
+      "q3": "Welcher Zeitbereich wird angezeigt?",
+      "a3": "Standardmäßig zeigt das Dashboard Nutzungsdaten der letzten 24 Stunden stündlich gruppiert an."
+    }
+  }
+}

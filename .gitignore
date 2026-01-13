@@ -46,3 +46,6 @@ nul
 .claude/settings.local.json
 .playwright-mcp/
 .mcp.json
+
+.vercel
+.env*.local

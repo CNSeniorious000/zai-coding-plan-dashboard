@@ -1,0 +1,102 @@
+{
+  "common": {
+    "language": "언어",
+    "loading": "로딩 중...",
+    "fetch": "가져오기",
+    "refresh": "새로고침"
+  },
+  "home": {
+    "title": "Z.AI Coding 대시보드",
+    "subtitle": "사용 현황 분석 & 문서"
+  },
+  "apiKey": {
+    "title": "API 키",
+    "description": "API 키는 Z.AI 서버 쿼리에만 사용되며 저장되지 않습니다.",
+    "placeholder": "Z.AI API 키를 입력하세요",
+    "paste": "클립보드에서 붙여넣기",
+    "invalid": "형식: 16진수 32자 + 점 + 영숫자 16자"
+  },
+  "quota": {
+    "used": "% 사용됨",
+    "remaining": "남음",
+    "resetsAt": "{time}에 재설정"
+  },
+  "modelUsage": {
+    "title": "모델 사용 현황 (최근 24시간)",
+    "model": "모델",
+    "requests": "요청",
+    "input": "입력",
+    "output": "출력",
+    "total": "합계"
+  },
+  "toolUsage": {
+    "title": "도구 사용 현황 (최근 24시간)",
+    "tool": "도구",
+    "totalCalls": "총 호출",
+    "success": "성공",
+    "failures": "실패"
+  },
+  "charts": {
+    "tokenUsage": "토큰 사용 추이",
+    "totalTokens": "합계: {count} 토큰",
+    "apiCalls": "API 호출 추이",
+    "totalCalls": "합계: {count} 호출",
+    "quotaUsage": "할당량 사용 현황",
+    "usage": "사용량",
+    "time": "시간: {time}",
+    "calls": "호출",
+    "remaining": "남음"
+  },
+  "empty": {
+    "title": "API 키 입력",
+    "description": "API 키를 입력하고 \"가져오기\"를 클릭하여 사용 통계를 확인하세요."
+  },
+  "errors": {
+    "fetchFailed": "사용 데이터를 가져오지 못했습니다"
+  },
+  "docs": {
+    "title": "문서",
+    "nav": {
+      "docs": "문서",
+      "home": "홈",
+      "gettingStarted": "시작하기",
+      "apiReference": "API 참조",
+      "faq": "자주 묻는 질문"
+    },
+    "gettingStarted": {
+      "title": "시작하기",
+      "intro": "Z.AI Coding 대시보드에 오신 것을 환영합니다. 이 대시보드는 API 사용 현황과 할당량 제한을 추적하는 데 도움이 됩니다.",
+      "prerequisites": "전제 조건",
+      "prerequisitesDesc": "이 대시보드를 사용하려면 Z.AI API 키가 필요합니다.",
+      "step1": "API 키 가져오기",
+      "step1Desc": "Z.AI 플랫폼에서 API 키를 가져옵니다.",
+      "step2": "API 키 입력",
+      "step2Desc": "입력 필드에 API 키를 붙여넣고 가져오기를 클릭하세요.",
+      "step3": "데이터 확인",
+      "step3Desc": "사용 통계가 실시간으로 표시됩니다."
+    },
+    "apiReference": {
+      "title": "API 참조",
+      "overview": "대시보드는 Z.AI Usage API를 사용하여 통계 데이터를 가져옵니다.",
+      "endpoint": "사용 현황 엔드포인트",
+      "endpointDesc": "지정된 시간 범위의 사용 데이터를 가져옵니다.",
+      "parameters": "매개변수",
+      "paramApiKey": "apiKey",
+      "paramApiKeyDesc": "Z.AI API 키.",
+      "paramStartTime": "startTime",
+      "paramStartTimeDesc": "시작 시간, 형식: YYYY-MM-DD HH:mm:ss",
+      "paramEndTime": "endTime",
+      "paramEndTimeDesc": "종료 시간, 형식: YYYY-MM-DD HH:mm:ss",
+      "response": "응답"
+    },
+    "faq": {
+      "title": "자주 묻는 질문",
+      "q1": "API 키가 저장되나요?",
+      "a1": "아니요, API 키는 브라우저의 localStorage에만 저장되며 Z.AI 공식 API 이외의 서버에는 전송되지 않습니다.",
+      "q2": "데이터 업데이트 빈도는?",
+      "a2": "가져오기 버튼을 클릭하면 데이터가 실시간으로 가져옵니다. 언제든지 새로고침할 수 있습니다.",
+      "q3": "표시되는 시간 범위는?",
+      "a3": "기본적으로 대시보드는 최근 24시간의 사용 데이터를 시간 단위로 표시합니다."
+    }
+  }
+}

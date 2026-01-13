@@ -1,0 +1,102 @@
+{
+  "common": {
+    "language": "言語",
+    "loading": "読み込み中...",
+    "fetch": "取得",
+    "refresh": "更新"
+  },
+  "home": {
+    "title": "Z.AI Coding ダッシュボード",
+    "subtitle": "使用状況分析 & ドキュメント"
+  },
+  "apiKey": {
+    "title": "API キー",
+    "description": "API キーは Z.AI サーバーへのクエリのみに使用され、保存されません。",
+    "placeholder": "Z.AI API キーを入力してください",
+    "paste": "クリップボードから貼り付け",
+    "invalid": "形式：16進数32文字 + ドット + 英数字16文字"
+  },
+  "quota": {
+    "used": "% 使用済み",
+    "remaining": "残り",
+    "resetsAt": "{time}にリセット"
+  },
+  "modelUsage": {
+    "title": "モデル使用状況（過去24時間）",
+    "model": "モデル",
+    "requests": "リクエスト",
+    "input": "入力",
+    "output": "出力",
+    "total": "合計"
+  },
+  "toolUsage": {
+    "title": "ツール使用状況（過去24時間）",
+    "tool": "ツール",
+    "totalCalls": "総コール数",
+    "success": "成功",
+    "failures": "失敗"
+  },
+  "charts": {
+    "tokenUsage": "トークン使用推移",
+    "totalTokens": "合計：{count} トークン",
+    "apiCalls": "API コール推移",
+    "totalCalls": "合計：{count} コール",
+    "quotaUsage": "クォータ使用状況",
+    "usage": "使用量",
+    "time": "時間：{time}",
+    "calls": "コール",
+    "remaining": "残り"
+  },
+  "empty": {
+    "title": "API キーを入力",
+    "description": "API キーを入力して「取得」をクリックすると、使用統計が表示されます。"
+  },
+  "errors": {
+    "fetchFailed": "使用データの取得に失敗しました"
+  },
+  "docs": {
+    "title": "ドキュメント",
+    "nav": {
+      "docs": "ドキュメント",
+      "home": "ホーム",
+      "gettingStarted": "はじめに",
+      "apiReference": "API リファレンス",
+      "faq": "よくある質問"
+    },
+    "gettingStarted": {
+      "title": "はじめに",
+      "intro": "Z.AI Coding ダッシュボードへようこそ。このダッシュボードは、API の使用状況とクォータ制限を追跡するのに役立ちます。",
+      "prerequisites": "前提条件",
+      "prerequisitesDesc": "このダッシュボードを使用するには、Z.AI API キーが必要です。",
+      "step1": "API キーの取得",
+      "step1Desc": "Z.AI プラットフォームから API キーを取得します。",
+      "step2": "API キーの入力",
+      "step2Desc": "入力フィールドに API キーを貼り付けて、取得をクリックします。",
+      "step3": "データの表示",
+      "step3Desc": "使用統計がリアルタイムで表示されます。"
+    },
+    "apiReference": {
+      "title": "API リファレンス",
+      "overview": "ダッシュボードは Z.AI Usage API を使用して統計データを取得します。",
+      "endpoint": "使用状況エンドポイント",
+      "endpointDesc": "指定された時間範囲の使用データを取得します。",
+      "parameters": "パラメータ",
+      "paramApiKey": "apiKey",
+      "paramApiKeyDesc": "あなたの Z.AI API キー。",
+      "paramStartTime": "startTime",
+      "paramStartTimeDesc": "開始時刻、形式：YYYY-MM-DD HH:mm:ss",
+      "paramEndTime": "endTime",
+      "paramEndTimeDesc": "終了時刻、形式：YYYY-MM-DD HH:mm:ss",
+      "response": "レスポンス"
+    },
+    "faq": {
+      "title": "よくある質問",
+      "q1": "API キーは保存されますか？",
+      "a1": "いいえ、API キーはブラウザの localStorage にのみ保存され、Z.AI 公式 API 以外のサーバーには送信されません。",
+      "q2": "データの更新頻度は？",
+      "a2": "取得ボタンをクリックすると、データがリアルタイムで取得されます。いつでも更新できます。",
+      "q3": "表示される時間範囲は？",
+      "a3": "デフォルトでは、ダッシュボードは過去24時間の使用データを時間単位で表示します。"
+    }
+  }
+}

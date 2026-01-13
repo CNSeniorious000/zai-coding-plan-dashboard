@@ -6,10 +6,10 @@ import {
   DocsTitle,
 } from 'fumadocs-ui/page';
 import { notFound } from 'next/navigation';
-import { getMDXComponents } from '../../../../mdx-components';
+import { getMDXComponents } from '../../../../../mdx-components';
 
 export default async function Page(props: {
-  params: Promise<{ slug?: string[] }>;
+  params: Promise<{ locale: string; slug?: string[] }>;
 }) {
   const params = await props.params;
   const page = source.getPage(params.slug);
@@ -33,7 +33,7 @@ export async function generateStaticParams() {
 }
 
 export async function generateMetadata(props: {
-  params: Promise<{ slug?: string[] }>;
+  params: Promise<{ locale: string; slug?: string[] }>;
 }) {
   const params = await props.params;
   const page = source.getPage(params.slug);
