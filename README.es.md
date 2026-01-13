@@ -1,12 +1,12 @@
 <div align="center">
 
-  **[English](README.md)** | **[简体中文](README.zh-CN.md)** | **[日本語](README.ja.md)** | **[한국어](README.ko.md)** | **[Español](README.es.md)** | **[Français](README.fr.md)** | **[Deutsch](README.de.md)**
+**[English](README.md)** | **[简体中文](README.zh-CN.md)** | **[日本語](README.ja.md)** | **[한국어](README.ko.md)** | **[Español](README.es.md)** | **[Français](README.fr.md)** | **[Deutsch](README.de.md)**
 
-  <p>
+<p>
 
-  # Panel de Z.AI Usage
+# Panel de Z.AI Usage
 
-  Un panel moderno de Next.js para monitorear el uso de la API de Z.AI con análisis en tiempo real y soporte multilingüe.
+Un panel moderno de Next.js para monitorear el uso de la API de Z.AI con análisis en tiempo real y soporte multilingüe.
 
 </div>
 
@@ -30,16 +30,16 @@
 
 ## Stack Tecnológico
 
-| Tecnología | Descripción |
-|-----------|-------------|
-| **Next.js 16** | Framework React con App Router |
-| **React 19** | React más reciente con Server Components |
-| **TypeScript** | Desarrollo con seguridad de tipos |
-| **Tailwind CSS v4** | Framework CSS utilitario-first |
-| **next-intl** | Framework de internacionalización (i18n) |
-| **Recharts** | Librería de visualización de datos |
-| **Radix UI** | Librería de componentes accesibles |
-| **Fumadocs** | Sistema de documentación |
+| Tecnología          | Descripción                              |
+| ------------------- | ---------------------------------------- |
+| **Next.js 16**      | Framework React con App Router           |
+| **React 19**        | React más reciente con Server Components |
+| **TypeScript**      | Desarrollo con seguridad de tipos        |
+| **Tailwind CSS v4** | Framework CSS utilitario-first           |
+| **next-intl**       | Framework de internacionalización (i18n) |
+| **Recharts**        | Librería de visualización de datos       |
+| **Radix UI**        | Librería de componentes accesibles       |
+| **Fumadocs**        | Sistema de documentación                 |
 
 ## Instalación
 
@@ -84,11 +84,11 @@ Abre [http://localhost:3000](http://localhost:3000) en tu navegador.
 
 El panel usa las APIs de monitoreo oficial de Z.AI：
 
-| Endpoint | Descripción |
-|----------|-------------|
+| Endpoint                         | Descripción                              |
+| -------------------------------- | ---------------------------------------- |
 | `/api/monitor/usage/model-usage` | Estadísticas de uso de tokens por modelo |
-| `/api/monitor/usage/tool-usage` | Rendimiento de llamadas a herramientas |
-| `/api/monitor/usage/quota/limit` | Límites de cuota actuales |
+| `/api/monitor/usage/tool-usage`  | Rendimiento de llamadas a herramientas   |
+| `/api/monitor/usage/quota/limit` | Límites de cuota actuales                |
 
 ## Estructura del Proyecto
 
@@ -141,8 +141,8 @@ Este proyecto es privado.
 
 <div align="center">
 
-  Hecho con ❤️ para la comunidad de Z.AI
+Hecho con ❤️ para la comunidad de Z.AI
 
-  **[English](README.md)** | **[简体中文](README.zh-CN.md)** | **[日本語](README.ja.md)** | **[한국어](README.ko.md)** | **[Español](README.es.md)** | **[Français](README.fr.md)** | **[Deutsch](README.de.md)**
+**[English](README.md)** | **[简体中文](README.zh-CN.md)** | **[日本語](README.ja.md)** | **[한국어](README.ko.md)** | **[Español](README.es.md)** | **[Français](README.fr.md)** | **[Deutsch](README.de.md)**
 
 </div>

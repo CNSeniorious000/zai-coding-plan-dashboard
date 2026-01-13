@@ -1,12 +1,12 @@
 <div align="center">
 
-  **[English](README.md)** | **[简体中文](README.zh-CN.md)** | **[日本語](README.ja.md)** | **[한국어](README.ko.md)** | **[Español](README.es.md)** | **[Français](README.fr.md)** | **[Deutsch](README.de.md)**
+**[English](README.md)** | **[简体中文](README.zh-CN.md)** | **[日本語](README.ja.md)** | **[한국어](README.ko.md)** | **[Español](README.es.md)** | **[Français](README.fr.md)** | **[Deutsch](README.de.md)**
 
-  <p>
+<p>
 
-  # Tableau de Bord Z.AI Usage
+# Tableau de Bord Z.AI Usage
 
-  Un tableau de bord Next.js moderne pour surveiller l'utilisation de l'API Z.AI avec une analyse en temps réel et un support multilingue.
+Un tableau de bord Next.js moderne pour surveiller l'utilisation de l'API Z.AI avec une analyse en temps réel et un support multilingue.
 
 </div>
 
@@ -30,16 +30,16 @@
 
 ## Stack Technique
 
-| Technologie | Description |
-|-----------|-------------|
-| **Next.js 16** | Framework React avec App Router |
-| **React 19** | React le plus récent avec Server Components |
-| **TypeScript** | Développement avec sécurité des types |
-| **Tailwind CSS v4** | Framework CSS utilitaire-first |
-| **next-intl** | Framework d'internationalisation (i18n) |
-| **Recharts** | Bibliothèque de visualisation de données |
-| **Radix UI** | Bibliothèque de composants accessibles |
-| **Fumadocs** | Système de documentation |
+| Technologie         | Description                                 |
+| ------------------- | ------------------------------------------- |
+| **Next.js 16**      | Framework React avec App Router             |
+| **React 19**        | React le plus récent avec Server Components |
+| **TypeScript**      | Développement avec sécurité des types       |
+| **Tailwind CSS v4** | Framework CSS utilitaire-first              |
+| **next-intl**       | Framework d'internationalisation (i18n)     |
+| **Recharts**        | Bibliothèque de visualisation de données    |
+| **Radix UI**        | Bibliothèque de composants accessibles      |
+| **Fumadocs**        | Système de documentation                    |
 
 ## Installation
 
@@ -84,11 +84,11 @@ Ouvrez [http://localhost:3000](http://localhost:3000) dans votre navigateur.
 
 Le tableau de bord utilise les APIs de surveillance officielles de Z.AI：
 
-| Endpoint | Description |
-|----------|-------------|
+| Endpoint                         | Description                                      |
+| -------------------------------- | ------------------------------------------------ |
 | `/api/monitor/usage/model-usage` | Statistiques d'utilisation des tokens par modèle |
-| `/api/monitor/usage/tool-usage` | Performance des appels d'outils |
-| `/api/monitor/usage/quota/limit` | Limites de quota actuelles |
+| `/api/monitor/usage/tool-usage`  | Performance des appels d'outils                  |
+| `/api/monitor/usage/quota/limit` | Limites de quota actuelles                       |
 
 ## Structure du Projet
 
@@ -141,8 +141,8 @@ Ce projet est privé.
 
 <div align="center">
 
-  Fait avec ❤️ pour la communauté Z.AI
+Fait avec ❤️ pour la communauté Z.AI
 
-  **[English](README.md)** | **[简体中文](README.zh-CN.md)** | **[日本語](README.ja.md)** | **[한국어](README.ko.md)** | **[Español](README.es.md)** | **[Français](README.fr.md)** | **[Deutsch](README.de.md)**
+**[English](README.md)** | **[简体中文](README.zh-CN.md)** | **[日本語](README.ja.md)** | **[한국어](README.ko.md)** | **[Español](README.es.md)** | **[Français](README.fr.md)** | **[Deutsch](README.de.md)**
 
 </div>

@@ -1,12 +1,12 @@
 <div align="center">
 
-  **[English](README.md)** | **[简体中文](README.zh-CN.md)** | **[日本語](README.ja.md)** | **[한국어](README.ko.md)** | **[Español](README.es.md)** | **[Français](README.fr.md)** | **[Deutsch](README.de.md)**
+**[English](README.md)** | **[简体中文](README.zh-CN.md)** | **[日本語](README.ja.md)** | **[한국어](README.ko.md)** | **[Español](README.es.md)** | **[Français](README.fr.md)** | **[Deutsch](README.de.md)**
 
-  <p>
+<p>
 
-  # Z.AI Usage Dashboard
+# Z.AI Usage Dashboard
 
-  Ein modernes Next.js-Dashboard zur Überwachung der Z.AI-API-Nutzung mit Echtzeitanalysen und mehrsprachiger Unterstützung.
+Ein modernes Next.js-Dashboard zur Überwachung der Z.AI-API-Nutzung mit Echtzeitanalysen und mehrsprachiger Unterstützung.
 
 </div>
 
@@ -30,16 +30,16 @@
 
 ## Tech Stack
 
-| Technologie | Beschreibung |
-|------------|-------------|
-| **Next.js 16** | React-Framework mit App Router |
-| **React 19** | React neueste Version mit Server Components |
-| **TypeScript** | Typsichere Entwicklung |
-| **Tailwind CSS v4** | Utility-First CSS-Framework |
-| **next-intl** | Internationalisierungs-Framework (i18n) |
-| **Recharts** | Datenvisualisierungsbibliothek |
-| **Radix UI** | Barrierefreie Komponentenbibliothek |
-| **Fumadocs** | Dokumentationssystem |
+| Technologie         | Beschreibung                                |
+| ------------------- | ------------------------------------------- |
+| **Next.js 16**      | React-Framework mit App Router              |
+| **React 19**        | React neueste Version mit Server Components |
+| **TypeScript**      | Typsichere Entwicklung                      |
+| **Tailwind CSS v4** | Utility-First CSS-Framework                 |
+| **next-intl**       | Internationalisierungs-Framework (i18n)     |
+| **Recharts**        | Datenvisualisierungsbibliothek              |
+| **Radix UI**        | Barrierefreie Komponentenbibliothek         |
+| **Fumadocs**        | Dokumentationssystem                        |
 
 ## Installation
 
@@ -84,11 +84,11 @@ npm run dev
 
 Das Dashboard verwendet die offiziellen Monitoring-APIs von Z.AI：
 
-| Endpunkt | Beschreibung |
-|---------|-------------|
+| Endpunkt                         | Beschreibung                     |
+| -------------------------------- | -------------------------------- |
 | `/api/monitor/usage/model-usage` | Modell-Token-Nutzungsstatistiken |
-| `/api/monitor/usage/tool-usage` | Tool-Aufruf-Leistung |
-| `/api/monitor/usage/quota/limit` | Aktuelle Quota-Limits |
+| `/api/monitor/usage/tool-usage`  | Tool-Aufruf-Leistung             |
+| `/api/monitor/usage/quota/limit` | Aktuelle Quota-Limits            |
 
 ## Projektstruktur
 
@@ -141,8 +141,8 @@ Dieses Projekt ist privat.
 
 <div align="center">
 
-  Mit ❤️ für die Z.AI-Community erstellt
+Mit ❤️ für die Z.AI-Community erstellt
 
-  **[English](README.md)** | **[简体中文](README.zh-CN.md)** | **[日本語](README.ja.md)** | **[한국어](README.ko.md)** | **[Español](README.es.md)** | **[Français](README.fr.md)** | **[Deutsch](README.de.md)**
+**[English](README.md)** | **[简体中文](README.zh-CN.md)** | **[日本語](README.ja.md)** | **[한국어](README.ko.md)** | **[Español](README.es.md)** | **[Français](README.fr.md)** | **[Deutsch](README.de.md)**
 
 </div>

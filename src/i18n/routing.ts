@@ -9,7 +9,7 @@ export const routing = defineRouting({
   defaultLocale: 'en',
 
   // The `pathnames` object holds the mapping of internal paths to their localized versions
-  localePrefix: 'always'
+  localePrefix: 'always',
 });
 
 // Lightweight wrappers around Next.js' navigation APIs

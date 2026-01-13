@@ -1,12 +1,12 @@
 <div align="center">
 
-  **[English](README.md)** | **[简体中文](README.zh-CN.md)** | **[日本語](README.ja.md)** | **[한국어](README.ko.md)** | **[Español](README.es.md)** | **[Français](README.fr.md)** | **[Deutsch](README.de.md)**
+**[English](README.md)** | **[简体中文](README.zh-CN.md)** | **[日本語](README.ja.md)** | **[한국어](README.ko.md)** | **[Español](README.es.md)** | **[Français](README.fr.md)** | **[Deutsch](README.de.md)**
 
-  <p>
+<p>
 
-  # Z.AI Usage ダッシュボード
+# Z.AI Usage ダッシュボード
 
-  Z.AI API の使用状況をリアルタイムで監視する、モダンな Next.js ダッシュボード。多言語サポート付き。
+Z.AI API の使用状況をリアルタイムで監視する、モダンな Next.js ダッシュボード。多言語サポート付き。
 
 </div>
 
@@ -30,16 +30,16 @@
 
 ## 技術スタック
 
-| 技術 | 説明 |
-|------|------|
-| **Next.js 16** | App Router 搭載の React フレームワーク |
-| **React 19** | Server Components 対応の最新 React |
-| **TypeScript** | タイプセーフな開発 |
-| **Tailwind CSS v4** | ユーティリティファースト CSS フレームワーク |
-| **next-intl** | 国際化 (i18n) フレームワーク |
-| **Recharts** | データ可視化ライブラリ |
-| **Radix UI** | アクセシビリティ対応コンポーネントライブラリ |
-| **Fumadocs** | ドキュメントシステム |
+| 技術                | 説明                                         |
+| ------------------- | -------------------------------------------- |
+| **Next.js 16**      | App Router 搭載の React フレームワーク       |
+| **React 19**        | Server Components 対応の最新 React           |
+| **TypeScript**      | タイプセーフな開発                           |
+| **Tailwind CSS v4** | ユーティリティファースト CSS フレームワーク  |
+| **next-intl**       | 国際化 (i18n) フレームワーク                 |
+| **Recharts**        | データ可視化ライブラリ                       |
+| **Radix UI**        | アクセシビリティ対応コンポーネントライブラリ |
+| **Fumadocs**        | ドキュメントシステム                         |
 
 ## インストール
 
@@ -84,11 +84,11 @@ npm run dev
 
 ダッシュボードは Z.AI の公式監視 API を使用：
 
-| エンドポイント | 説明 |
-|-----------|------|
-| `/api/monitor/usage/model-usage` | モデルトークン使用統計 |
-| `/api/monitor/usage/tool-usage` | ツール呼び出しパフォーマンス |
-| `/api/monitor/usage/quota/limit` | 現在のクォータ制限 |
+| エンドポイント                   | 説明                         |
+| -------------------------------- | ---------------------------- |
+| `/api/monitor/usage/model-usage` | モデルトークン使用統計       |
+| `/api/monitor/usage/tool-usage`  | ツール呼び出しパフォーマンス |
+| `/api/monitor/usage/quota/limit` | 現在のクォータ制限           |
 
 ## プロジェクト構成
 
@@ -141,8 +141,8 @@ src/
 
 <div align="center">
 
-  Z.AI コミュニティのために ❤️ で作られました
+Z.AI コミュニティのために ❤️ で作られました
 
-  **[English](README.md)** | **[简体中文](README.zh-CN.md)** | **[日本語](README.ja.md)** | **[한국어](README.ko.md)** | **[Español](README.es.md)** | **[Français](README.fr.md)** | **[Deutsch](README.de.md)**
+**[English](README.md)** | **[简体中文](README.zh-CN.md)** | **[日本語](README.ja.md)** | **[한국어](README.ko.md)** | **[Español](README.es.md)** | **[Français](README.fr.md)** | **[Deutsch](README.de.md)**
 
 </div>

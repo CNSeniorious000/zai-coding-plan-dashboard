@@ -1,10 +1,5 @@
 import { source } from '@/lib/source';
-import {
-  DocsPage,
-  DocsBody,
-  DocsDescription,
-  DocsTitle,
-} from 'fumadocs-ui/page';
+import { DocsBody, DocsDescription, DocsPage, DocsTitle } from 'fumadocs-ui/page';
 import { notFound } from 'next/navigation';
 import { getMDXComponents } from '../../../../../mdx-components';
 import { setRequestLocale } from 'next-intl/server';

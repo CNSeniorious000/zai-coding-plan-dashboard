@@ -38,9 +38,7 @@ export async function POST(request: NextRequest) {
       return NextResponse.json({ error: 'API key is required' }, { status: 400 });
     }
 
-    const queryParams = startTime && endTime
-      ? `?startTime=${encodeURIComponent(startTime)}&endTime=${encodeURIComponent(endTime)}`
-      : '';
+    const queryParams = startTime && endTime ? `?startTime=${encodeURIComponent(startTime)}&endTime=${encodeURIComponent(endTime)}` : '';
 
     const [modelUsage, toolUsage, quotaLimit] = await Promise.all([
       fetchUsage(`${ZAI_BASE_URL}/api/monitor/usage/model-usage${queryParams}`, apiKey).catch(() => null),
@@ -96,7 +94,7 @@ export async function POST(request: NextRequest) {
     console.error('Usage API error:', error);
     return NextResponse.json(
       { error: error instanceof Error ? error.message : 'Failed to fetch usage data' },
-      { status: 500 }
+      { status: 500 },
     );
   }
 }

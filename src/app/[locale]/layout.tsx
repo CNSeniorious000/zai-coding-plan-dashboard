@@ -1,6 +1,6 @@
-import type { Metadata } from "next";
+import type { Metadata } from 'next';
 import { getMessages, setRequestLocale } from 'next-intl/server';
-import { NextIntlClientProvider, hasLocale } from 'next-intl';
+import { hasLocale, NextIntlClientProvider } from 'next-intl';
 import { RootProvider } from 'fumadocs-ui/provider/next';
 import { defineI18nUI } from 'fumadocs-ui/i18n';
 import { i18n } from '@/lib/i18n';
@@ -51,7 +51,7 @@ export async function generateMetadata({
 
   return {
     title: t.home.title,
-    description: "Monitor your Z.AI Coding Plan usage and quota",
+    description: 'Monitor your Z.AI Coding Plan usage and quota',
   };
 }
 

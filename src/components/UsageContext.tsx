@@ -1,6 +1,6 @@
 'use client';
 
-import { createContext, useContext, useState, useCallback, useEffect, type ReactNode } from 'react';
+import { createContext, type ReactNode, useCallback, useContext, useEffect, useState } from 'react';
 
 export interface UsageData {
   modelUsage?: {
@@ -13,20 +13,24 @@ export interface UsageData {
     totalCalls: number;
     totalTokens: number;
   } | null;
-  toolUsage?: Array<{
-    tool: string;
-    callCount: number;
-    successCount: number;
-    failureCount: number;
-  }> | null;
-  quotaLimit?: { limits: Array<{
-    type: string;
-    percentage: number;
-    currentUsage?: number;
-    total?: number;
-    remaining?: number;
-    nextResetTime?: number;
-  }> } | null;
+  toolUsage?:
+    | Array<{
+      tool: string;
+      callCount: number;
+      successCount: number;
+      failureCount: number;
+    }>
+    | null;
+  quotaLimit?: {
+    limits: Array<{
+      type: string;
+      percentage: number;
+      currentUsage?: number;
+      total?: number;
+      remaining?: number;
+      nextResetTime?: number;
+    }>;
+  } | null;
   error?: string;
 }
 

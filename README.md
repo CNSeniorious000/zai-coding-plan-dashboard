@@ -1,12 +1,12 @@
 <div align="center">
 
-  **[English](README.md)** | **[简体中文](README.zh-CN.md)** | **[日本語](README.ja.md)** | **[한국어](README.ko.md)** | **[Español](README.es.md)** | **[Français](README.fr.md)** | **[Deutsch](README.de.md)**
+**[English](README.md)** | **[简体中文](README.zh-CN.md)** | **[日本語](README.ja.md)** | **[한국어](README.ko.md)** | **[Español](README.es.md)** | **[Français](README.fr.md)** | **[Deutsch](README.de.md)**
 
-  <p>
+<p>
 
-  # Z.AI Usage Dashboard
+# Z.AI Usage Dashboard
 
-  A modern Next.js dashboard for monitoring Z.AI API usage with real-time analytics and multi-language support.
+A modern Next.js dashboard for monitoring Z.AI API usage with real-time analytics and multi-language support.
 
 </div>
 
@@ -55,6 +55,7 @@ Open [http://localhost:3000](http://localhost:3000)
 Fetch usage statistics from Z.AI API.
 
 **Request Body:**
+
 ```json
 {
   "apiKey": "string (required) - Z.AI API key in format [hex32].[alphanum16]",
@@ -64,6 +65,7 @@ Fetch usage statistics from Z.AI API.
 ```
 
 **Response:**
+
 ```json
 {
   "modelUsage": {
@@ -159,6 +161,6 @@ Private project.
 
 <div align="center">
 
-  **[English](README.md)** | **[简体中文](README.zh-CN.md)** | **[日本語](README.ja.md)** | **[한국어](README.ko.md)** | **[Español](README.es.md)** | **[Français](README.fr.md)** | **[Deutsch](README.de.md)**
+**[English](README.md)** | **[简体中文](README.zh-CN.md)** | **[日本語](README.ja.md)** | **[한국어](README.ko.md)** | **[Español](README.es.md)** | **[Français](README.fr.md)** | **[Deutsch](README.de.md)**
 
 </div>

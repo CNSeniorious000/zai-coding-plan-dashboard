@@ -3,21 +3,8 @@
 import { useTheme } from 'next-themes';
 import { useTranslations } from 'next-intl';
 import { useEffect, useState } from 'react';
-import {
-  AreaChart,
-  Area,
-  XAxis,
-  YAxis,
-  CartesianGrid,
-  Tooltip,
-  ResponsiveContainer,
-  PieChart,
-  Pie,
-  Cell,
-  BarChart,
-  Bar,
-} from 'recharts';
-import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
+import { Area, AreaChart, Bar, BarChart, CartesianGrid, Cell, Pie, PieChart, ResponsiveContainer, Tooltip, XAxis, YAxis } from 'recharts';
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 
 interface TimeSeriesItem {
   time: string;
@@ -91,29 +78,29 @@ export function UsageCharts({ modelUsage, quotaLimits }: UsageChartsProps) {
   };
 
   return (
-    <div className="grid gap-4 grid-cols-1 md:grid-cols-2 xl:grid-cols-3">
+    <div className='grid gap-4 grid-cols-1 md:grid-cols-2 xl:grid-cols-3'>
       {/* Token Usage Over Time */}
       {hasModelData && (
         <Card>
           <CardHeader>
-            <CardTitle className="text-sm font-medium">{t('charts.tokenUsage')}</CardTitle>
-            <CardDescription className="text-xs">
+            <CardTitle className='text-sm font-medium'>{t('charts.tokenUsage')}</CardTitle>
+            <CardDescription className='text-xs'>
               {t('charts.totalTokens', { count: modelUsage.totalTokens.toLocaleString() })}
             </CardDescription>
           </CardHeader>
           <CardContent>
-            <div className="h-[180px]">
-              <ResponsiveContainer width="100%" height="100%">
+            <div className='h-[180px]'>
+              <ResponsiveContainer width='100%' height='100%'>
                 <AreaChart data={modelUsage.timeSeries} margin={{ top: 8, right: 8, left: -16, bottom: 0 }}>
                   <defs>
-                    <linearGradient id="colorTokens" x1="0" y1="0" x2="0" y2="1">
-                      <stop offset="5%" stopColor={colors.area} stopOpacity={isDark ? 0.4 : 0.3} />
-                      <stop offset="95%" stopColor={colors.area} stopOpacity={isDark ? 0.05 : 0} />
+                    <linearGradient id='colorTokens' x1='0' y1='0' x2='0' y2='1'>
+                      <stop offset='5%' stopColor={colors.area} stopOpacity={isDark ? 0.4 : 0.3} />
+                      <stop offset='95%' stopColor={colors.area} stopOpacity={isDark ? 0.05 : 0} />
                     </linearGradient>
                   </defs>
-                  <CartesianGrid strokeDasharray="3 3" stroke={colors.grid} />
+                  <CartesianGrid strokeDasharray='3 3' stroke={colors.grid} />
                   <XAxis
-                    dataKey="time"
+                    dataKey='time'
                     tick={{ fontSize: 10, fill: colors.text }}
                     tickLine={false}
                     stroke={colors.grid}
@@ -144,11 +131,11 @@ export function UsageCharts({ modelUsage, quotaLimits }: UsageChartsProps) {
                     labelStyle={{ color: colors.tooltipText, fontSize: '10px' }}
                   />
                   <Area
-                    type="monotone"
-                    dataKey="tokens"
+                    type='monotone'
+                    dataKey='tokens'
                     stroke={colors.area}
                     fillOpacity={1}
-                    fill="url(#colorTokens)"
+                    fill='url(#colorTokens)'
                     strokeWidth={2}
                   />
                 </AreaChart>
@@ -162,18 +149,18 @@ export function UsageCharts({ modelUsage, quotaLimits }: UsageChartsProps) {
       {hasModelData && (
         <Card>
           <CardHeader>
-            <CardTitle className="text-sm font-medium">{t('charts.apiCalls')}</CardTitle>
-            <CardDescription className="text-xs">
+            <CardTitle className='text-sm font-medium'>{t('charts.apiCalls')}</CardTitle>
+            <CardDescription className='text-xs'>
               {t('charts.totalCalls', { count: modelUsage.totalCalls.toLocaleString() })}
             </CardDescription>
           </CardHeader>
           <CardContent>
-            <div className="h-[180px]">
-              <ResponsiveContainer width="100%" height="100%">
+            <div className='h-[180px]'>
+              <ResponsiveContainer width='100%' height='100%'>
                 <BarChart data={modelUsage.timeSeries} margin={{ top: 8, right: 8, left: -16, bottom: 0 }}>
-                  <CartesianGrid strokeDasharray="3 3" stroke={colors.grid} />
+                  <CartesianGrid strokeDasharray='3 3' stroke={colors.grid} />
                   <XAxis
-                    dataKey="time"
+                    dataKey='time'
                     tick={{ fontSize: 10, fill: colors.text }}
                     tickLine={false}
                     stroke={colors.grid}
@@ -199,7 +186,7 @@ export function UsageCharts({ modelUsage, quotaLimits }: UsageChartsProps) {
                     labelStyle={{ color: colors.tooltipText, fontSize: '10px' }}
                   />
                   <Bar
-                    dataKey="calls"
+                    dataKey='calls'
                     fill={colors.bar}
                     radius={[3, 3, 0, 0]}
                   />
@@ -214,27 +201,27 @@ export function UsageCharts({ modelUsage, quotaLimits }: UsageChartsProps) {
       {hasQuotaData && (
         <Card>
           <CardHeader>
-            <CardTitle className="text-sm font-medium">{t('charts.quotaUsage')}</CardTitle>
+            <CardTitle className='text-sm font-medium'>{t('charts.quotaUsage')}</CardTitle>
           </CardHeader>
           <CardContent>
-            <div className="flex flex-col gap-3">
+            <div className='flex flex-col gap-3'>
               {quotaData.map((item, index) => (
-                <div key={index} className="flex items-center gap-3">
-                  <div className="h-[50px] w-[50px] flex-shrink-0">
-                    <ResponsiveContainer width="100%" height="100%">
+                <div key={index} className='flex items-center gap-3'>
+                  <div className='h-[50px] w-[50px] flex-shrink-0'>
+                    <ResponsiveContainer width='100%' height='100%'>
                       <PieChart>
                         <Pie
                           data={[
                             { name: t('charts.usage'), value: item.value },
                             { name: t('charts.remaining'), value: item.remaining },
                           ]}
-                          cx="50%"
-                          cy="50%"
+                          cx='50%'
+                          cy='50%'
                           innerRadius={16}
                           outerRadius={24}
                           paddingAngle={2}
-                          dataKey="value"
-                          stroke="none"
+                          dataKey='value'
+                          stroke='none'
                         >
                           <Cell fill={getQuotaColor(item.value)} />
                           <Cell fill={colors.pieMuted} />
@@ -242,9 +229,9 @@ export function UsageCharts({ modelUsage, quotaLimits }: UsageChartsProps) {
                       </PieChart>
                     </ResponsiveContainer>
                   </div>
-                  <div className="flex-1 min-w-0">
-                    <p className="text-sm font-semibold tabular-nums">{item.value}%</p>
-                    <p className="text-xs text-muted-foreground truncate">{item.name}</p>
+                  <div className='flex-1 min-w-0'>
+                    <p className='text-sm font-semibold tabular-nums'>{item.value}%</p>
+                    <p className='text-xs text-muted-foreground truncate'>{item.name}</p>
                   </div>
                 </div>
               ))}

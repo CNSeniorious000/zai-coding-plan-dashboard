@@ -1,12 +1,12 @@
 <div align="center">
 
-  **[English](README.md)** | **[简体中文](README.zh-CN.md)** | **[日本語](README.ja.md)** | **[한국어](README.ko.md)** | **[Español](README.es.md)** | **[Français](README.fr.md)** | **[Deutsch](README.de.md)**
+**[English](README.md)** | **[简体中文](README.zh-CN.md)** | **[日本語](README.ja.md)** | **[한국어](README.ko.md)** | **[Español](README.es.md)** | **[Français](README.fr.md)** | **[Deutsch](README.de.md)**
 
-  <p>
+<p>
 
-  # Z.AI Usage 대시보드
+# Z.AI Usage 대시보드
 
-  실시간 분석과 다국어 지원이 포함된 Z.AI API 사용 현황을 모니터링하는 현대적인 Next.js 대시보드.
+실시간 분석과 다국어 지원이 포함된 Z.AI API 사용 현황을 모니터링하는 현대적인 Next.js 대시보드.
 
 </div>
 
@@ -30,16 +30,16 @@
 
 ## 기술 스택
 
-| 기술 | 설명 |
-|-----|------|
-| **Next.js 16** | App Router가 포함된 React 프레임워크 |
-| **React 19** | Server Components를 지원하는 최신 React |
-| **TypeScript** | 타입 안전 개발 |
-| **Tailwind CSS v4** | 유틸리티 우선 CSS 프레임워크 |
-| **next-intl** | 국제화 (i18n) 프레임워크 |
-| **Recharts** | 데이터 시각화 라이브러리 |
-| **Radix UI** | 접근 가능한 컴포넌트 라이브러리 |
-| **Fumadocs** | 문서 시스템 |
+| 기술                | 설명                                    |
+| ------------------- | --------------------------------------- |
+| **Next.js 16**      | App Router가 포함된 React 프레임워크    |
+| **React 19**        | Server Components를 지원하는 최신 React |
+| **TypeScript**      | 타입 안전 개발                          |
+| **Tailwind CSS v4** | 유틸리티 우선 CSS 프레임워크            |
+| **next-intl**       | 국제화 (i18n) 프레임워크                |
+| **Recharts**        | 데이터 시각화 라이브러리                |
+| **Radix UI**        | 접근 가능한 컴포넌트 라이브러리         |
+| **Fumadocs**        | 문서 시스템                             |
 
 ## 설치
 
@@ -84,11 +84,11 @@ npm run dev
 
 대시보드는 Z.AI의 공식 모니터링 API 사용：
 
-| 엔드포인트 | 설명 |
-|----------|------|
+| 엔드포인트                       | 설명                |
+| -------------------------------- | ------------------- |
 | `/api/monitor/usage/model-usage` | 모델 토큰 사용 통계 |
-| `/api/monitor/usage/tool-usage` | 도구 호출 성능 |
-| `/api/monitor/usage/quota/limit` | 현재 할당량 제한 |
+| `/api/monitor/usage/tool-usage`  | 도구 호출 성능      |
+| `/api/monitor/usage/quota/limit` | 현재 할당량 제한    |
 
 ## 프로젝트 구조
 
@@ -141,8 +141,8 @@ src/
 
 <div align="center">
 
-  Z.AI 커뮤니티를 위해 ❤️로 만들어졌습니다
+Z.AI 커뮤니티를 위해 ❤️로 만들어졌습니다
 
-  **[English](README.md)** | **[简体中文](README.zh-CN.md)** | **[日本語](README.ja.md)** | **[한국어](README.ko.md)** | **[Español](README.es.md)** | **[Français](README.fr.md)** | **[Deutsch](README.de.md)**
+**[English](README.md)** | **[简体中文](README.zh-CN.md)** | **[日本語](README.ja.md)** | **[한국어](README.ko.md)** | **[Español](README.es.md)** | **[Français](README.fr.md)** | **[Deutsch](README.de.md)**
 
 </div>

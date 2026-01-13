@@ -1,12 +1,12 @@
 <div align="center">
 
-  **[English](README.md)** | **[简体中文](README.zh-CN.md)** | **[日本語](README.ja.md)** | **[한국어](README.ko.md)** | **[Español](README.es.md)** | **[Français](README.fr.md)** | **[Deutsch](README.de.md)**
+**[English](README.md)** | **[简体中文](README.zh-CN.md)** | **[日本語](README.ja.md)** | **[한국어](README.ko.md)** | **[Español](README.es.md)** | **[Français](README.fr.md)** | **[Deutsch](README.de.md)**
 
-  <p>
+<p>
 
-  # Z.AI Usage 仪表板
+# Z.AI Usage 仪表板
 
-  一个现代化的 Next.js 仪表板，用于监控 Z.AI API 使用情况，具有实时分析和多语言支持。
+一个现代化的 Next.js 仪表板，用于监控 Z.AI API 使用情况，具有实时分析和多语言支持。
 
 </div>
 
@@ -30,16 +30,16 @@
 
 ## 技术栈
 
-| 技术 | 描述 |
-|------|------|
-| **Next.js 16** | 带 App Router 的 React 框架 |
-| **React 19** | 支持服务器组件的最新 React |
-| **TypeScript** | 类型安全开发 |
-| **Tailwind CSS v4** | 实用优先的 CSS 框架 |
-| **next-intl** | 国际化 (i18n) 框架 |
-| **Recharts** | 数据可视化库 |
-| **Radix UI** | 无障碍组件库 |
-| **Fumadocs** | 文档系统 |
+| 技术                | 描述                        |
+| ------------------- | --------------------------- |
+| **Next.js 16**      | 带 App Router 的 React 框架 |
+| **React 19**        | 支持服务器组件的最新 React  |
+| **TypeScript**      | 类型安全开发                |
+| **Tailwind CSS v4** | 实用优先的 CSS 框架         |
+| **next-intl**       | 国际化 (i18n) 框架          |
+| **Recharts**        | 数据可视化库                |
+| **Radix UI**        | 无障碍组件库                |
+| **Fumadocs**        | 文档系统                    |
 
 ## 安装
 
@@ -84,11 +84,11 @@ npm run dev
 
 仪表板使用 Z.AI 官方监控 API：
 
-| 端点 | 描述 |
-|-------|------|
+| 端点                             | 描述                |
+| -------------------------------- | ------------------- |
 | `/api/monitor/usage/model-usage` | 模型 token 使用统计 |
-| `/api/monitor/usage/tool-usage` | 工具调用性能 |
-| `/api/monitor/usage/quota/limit` | 当前配额限制 |
+| `/api/monitor/usage/tool-usage`  | 工具调用性能        |
+| `/api/monitor/usage/quota/limit` | 当前配额限制        |
 
 ## 项目结构
 
@@ -141,8 +141,8 @@ src/
 
 <div align="center">
 
-  用 ❤️ 为 Z.AI 社区打造
+用 ❤️ 为 Z.AI 社区打造
 
-  **[English](README.md)** | **[简体中文](README.zh-CN.md)** | **[日本語](README.ja.md)** | **[한국어](README.ko.md)** | **[Español](README.es.md)** | **[Français](README.fr.md)** | **[Deutsch](README.de.md)**
+**[English](README.md)** | **[简体中文](README.zh-CN.md)** | **[日本語](README.ja.md)** | **[한국어](README.ko.md)** | **[Español](README.es.md)** | **[Français](README.fr.md)** | **[Deutsch](README.de.md)**
 
 </div>

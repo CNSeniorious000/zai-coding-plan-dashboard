@@ -1,18 +1,7 @@
 'use client';
 
 import { useDocsSearch } from 'fumadocs-core/search/client';
-import {
-  SearchDialog,
-  SearchDialogClose,
-  SearchDialogContent,
-  SearchDialogHeader,
-  SearchDialogFooter,
-  SearchDialogIcon,
-  SearchDialogInput,
-  SearchDialogList,
-  SearchDialogOverlay,
-  type SharedProps,
-} from 'fumadocs-ui/components/dialog/search';
+import { SearchDialog, SearchDialogClose, SearchDialogContent, SearchDialogFooter, SearchDialogHeader, SearchDialogIcon, SearchDialogInput, SearchDialogList, SearchDialogOverlay, type SharedProps } from 'fumadocs-ui/components/dialog/search';
 import { useI18n } from 'fumadocs-ui/contexts/i18n';
 
 export default function CustomSearchDialog(props: SharedProps) {
