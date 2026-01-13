@@ -1,9 +1,9 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useMemo } from 'react';
 import { Link } from '@/i18n/routing';
 import { useTranslations } from 'next-intl';
-import { Dashboard } from '@/components/Dashboard';
+import { Dashboard, type UsageData as DashboardUsageData } from '@/components/Dashboard';
 import { UsageCharts } from '@/components/UsageCharts';
 import { ModeToggle } from '@/components/ModeToggle';
 import { LanguageSwitcher } from '@/components/LanguageSwitcher';
@@ -17,18 +17,32 @@ interface TimeSeriesItem {
   tokens: number;
 }
 
-interface UsageData {
+interface ChartData {
   modelUsage?: {
     timeSeries: TimeSeriesItem[];
     totalCalls: number;
     totalTokens: number;
   } | null;
-  quotaLimit?: { limits: { type: string; percentage: number }[] } | null;
+  quotaLimits?: { type: string; percentage: number }[] | null;
 }
 
 export default function Home() {
   const t = useTranslations();
-  const [usageData, setUsageData] = useState<UsageData | null>(null);
+  const [rawData, setRawData] = useState<DashboardUsageData | null>(null);
+
+  // Convert Dashboard's raw data to chart format
+  const chartData = useMemo<ChartData>(() => {
+    if (!rawData) return {};
+
+    const quotaLimits = rawData.quotaLimit?.limits?.map(limit => ({
+      type: limit.type,
+      percentage: limit.percentage,
+    })) || null;
+
+    return {
+      quotaLimits,
+    };
+  }, [rawData]);
 
   return (
     <div className="min-h-screen bg-background relative overflow-hidden flex flex-col">
@@ -87,14 +101,14 @@ export default function Home() {
         </div>
 
         {/* Dashboard */}
-        <Dashboard onDataLoaded={setUsageData} />
+        <Dashboard onDataLoaded={setRawData} />
 
         {/* Charts */}
-        {usageData && (
+        {chartData && (
           <div className="mt-8">
             <UsageCharts
-              modelUsage={usageData.modelUsage}
-              quotaLimits={usageData.quotaLimit?.limits}
+              modelUsage={chartData.modelUsage}
+              quotaLimits={chartData.quotaLimits}
             />
           </div>
         )}

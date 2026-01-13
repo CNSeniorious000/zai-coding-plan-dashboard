@@ -37,7 +37,7 @@ const { provider } = defineI18nUI(i18n, {
 
 export function baseOptions(locale: string): BaseLayoutProps {
   return {
-    i18n: provider(locale),
+    i18n: provider(locale) as any,
     nav: {
       title: 'Z.AI Usage Dashboard',
     },

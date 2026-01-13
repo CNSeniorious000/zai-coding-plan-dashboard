@@ -45,6 +45,8 @@ interface DashboardProps {
   onDataLoaded?: (data: UsageData) => void;
 }
 
+export type { UsageData };
+
 export function Dashboard({ onDataLoaded }: DashboardProps) {
   const t = useTranslations();
   const [apiKey, setApiKey] = useState('');
