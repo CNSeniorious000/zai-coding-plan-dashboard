@@ -1,0 +1,127 @@
+---
+title: Referencia de API
+description: Documentación técnica para los endpoints de la API de Uso de Z.AI
+---
+
+# Referencia de API
+
+Esta página documenta los endpoints de la API de Z.AI utilizados por el panel.
+
+## Autenticación
+
+Todas las solicitudes de la API requieren autenticación usando un token de portador：
+
+```bash
+Authorization: Bearer YOUR_API_KEY
+```
+
+## URL Base
+
+```
+https://api.z.ai
+```
+
+## Endpoints
+
+### Obtener Uso de Modelos
+
+Recupera estadísticas de uso de modelos para un período de tiempo.
+
+```http
+GET /api/monitor/usage/model-usage
+```
+
+**Parámetros de Consulta：**
+
+| Parámetro | Tipo | Descripción |
+|-----------|------|-------------|
+| startTime | string | Hora de inicio (formato：`YYYY-MM-DD HH:mm:ss`) |
+| endTime | string | Hora final (formato：`YYYY-MM-DD HH:mm:ss`) |
+
+**Respuesta：**
+
+```json
+{
+  "data": [
+    {
+      "model": "glm-4.7",
+      "inputTokens": 12345,
+      "outputTokens": 6789,
+      "totalTokens": 19134,
+      "requestCount": 42
+    }
+  ]
+}
+```
+
+### Obtener Uso de Herramientas
+
+Recupera estadísticas de uso de herramientas.
+
+```http
+GET /api/monitor/usage/tool-usage
+```
+
+**Parámetros de Consulta：**
+
+Igual que el endpoint de Uso de Modelos.
+
+**Respuesta：**
+
+```json
+{
+  "data": [
+    {
+      "tool": "code_execution",
+      "callCount": 100,
+      "successCount": 95,
+      "failureCount": 5
+    }
+  ]
+}
+```
+
+### Obtener Límite de Cuota
+
+Recupera la cuota actual y límites de uso.
+
+```http
+GET /api/monitor/usage/quota/limit
+```
+
+**Respuesta：**
+
+```json
+{
+  "data": {
+    "limits": [
+      {
+        "type": "TOKENS_LIMIT",
+        "percentage": 45.5
+      },
+      {
+        "type": "TIME_LIMIT",
+        "percentage": 20.0,
+        "currentValue": 200,
+        "usage": 1000
+      }
+    ]
+  }
+}
+```
+
+## Manejo de Errores
+
+La API devuelve códigos de estado HTTP estándar：
+
+| Código | Descripción |
+|--------|-------------|
+| 200 | Éxito |
+| 400 | Solicitud Incorrecta |
+| 401 | No Autorizado |
+| 429 | Límite de Tasa Excedido |
+| 500 | Error del Servidor |
+
+## Límites de Tasa
+
+Las llamadas a la API están sujetas a limitación de tasa. Si excedes el límite, recibirás una respuesta 429.

@@ -1,0 +1,127 @@
+---
+title: API リファレンス
+description: Z.AI 利用状況 API エンドポイントの技術ドキュメント
+---
+
+# API リファレンス
+
+このページでは、ダッシュボードで使用される Z.AI API エンドポイントについて説明します。
+
+## 認証
+
+すべての API リクエストには、ベアラートークンを使用した認証が必要です：
+
+```bash
+Authorization: Bearer YOUR_API_KEY
+```
+
+## ベース URL
+
+```
+https://api.z.ai
+```
+
+## エンドポイント
+
+### モデル使用状況を取得
+
+特定の期間のモデル使用統計を取得します。
+
+```http
+GET /api/monitor/usage/model-usage
+```
+
+**クエリパラメータ：**
+
+| パラメータ | タイプ | 説明 |
+|-----------|--------|------|
+| startTime | string | 開始時刻（形式：`YYYY-MM-DD HH:mm:ss`） |
+| endTime | string | 終了時刻（形式：`YYYY-MM-DD HH:mm:ss`） |
+
+**レスポンス：**
+
+```json
+{
+  "data": [
+    {
+      "model": "glm-4.7",
+      "inputTokens": 12345,
+      "outputTokens": 6789,
+      "totalTokens": 19134,
+      "requestCount": 42
+    }
+  ]
+}
+```
+
+### ツール使用状況を取得
+
+ツール使用統計を取得します。
+
+```http
+GET /api/monitor/usage/tool-usage
+```
+
+**クエリパラメータ：**
+
+モデル使用状況エンドポイントと同じ。
+
+**レスポンス：**
+
+```json
+{
+  "data": [
+    {
+      "tool": "code_execution",
+      "callCount": 100,
+      "successCount": 95,
+      "failureCount": 5
+    }
+  ]
+}
+```
+
+### クォータ制限を取得
+
+現在のクォータと使用制限を取得します。
+
+```http
+GET /api/monitor/usage/quota/limit
+```
+
+**レスポンス：**
+
+```json
+{
+  "data": {
+    "limits": [
+      {
+        "type": "TOKENS_LIMIT",
+        "percentage": 45.5
+      },
+      {
+        "type": "TIME_LIMIT",
+        "percentage": 20.0,
+        "currentValue": 200,
+        "usage": 1000
+      }
+    ]
+  }
+}
+```
+
+## エラーハンドリング
+
+API は標準的な HTTP ステータスコードを返します：
+
+| コード | 説明 |
+|--------|------|
+| 200 | 成功 |
+| 400 | 不正なリクエスト |
+| 401 | 認証されていない |
+| 429 | レート制限 |
+| 500 | サーバーエラー |
+
+## レート制限
+
+API 呼び出しはレート制限の対象となります。制限を超えると、429 レスポンスが返されます。

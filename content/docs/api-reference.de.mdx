@@ -1,0 +1,127 @@
+---
+title: API-Referenz
+description: Technische Dokumentation für die Z.AI Nutzungs-API-Endpunkte
+---
+
+# API-Referenz
+
+Diese Seite dokumentiert die Z.AI-API-Endpunkte, die vom Dashboard verwendet werden.
+
+## Authentifizierung
+
+Alle API-Anforderungen erfordern eine Authentifizierung mit einem Bearer-Token：
+
+```bash
+Authorization: Bearer YOUR_API_KEY
+```
+
+## Basis-URL
+
+```
+https://api.z.ai
+```
+
+## Endpunkte
+
+### Modellnutzung abrufen
+
+Ruft Statistiken zur Modellnutzung für einen Zeitraum ab.
+
+```http
+GET /api/monitor/usage/model-usage
+```
+
+**Abfrageparameter：**
+
+| Parameter | Typ | Beschreibung |
+|-----------|------|-------------|
+| startTime | string | Startzeit (Format：`YYYY-MM-DD HH:mm:ss`) |
+| endTime | string | Endzeit (Format：`YYYY-MM-DD HH:mm:ss`) |
+
+**Antwort：**
+
+```json
+{
+  "data": [
+    {
+      "model": "glm-4.7",
+      "inputTokens": 12345,
+      "outputTokens": 6789,
+      "totalTokens": 19134,
+      "requestCount": 42
+    }
+  ]
+}
+```
+
+### Tool-Nutzung abrufen
+
+Ruft Statistiken zur Tool-Nutzung ab.
+
+```http
+GET /api/monitor/usage/tool-usage
+```
+
+**Abfrageparameter：**
+
+Gleich wie Endpunkt für Modellnutzung.
+
+**Antwort：**
+
+```json
+{
+  "data": [
+    {
+      "tool": "code_execution",
+      "callCount": 100,
+      "successCount": 95,
+      "failureCount": 5
+    }
+  ]
+}
+```
+
+### Kontingentlimit abrufen
+
+Ruft das aktuelle Kontingent und Nutzungsgrenzen ab.
+
+```http
+GET /api/monitor/usage/quota/limit
+```
+
+**Antwort：**
+
+```json
+{
+  "data": {
+    "limits": [
+      {
+        "type": "TOKENS_LIMIT",
+        "percentage": 45.5
+      },
+      {
+        "type": "TIME_LIMIT",
+        "percentage": 20.0,
+        "currentValue": 200,
+        "usage": 1000
+      }
+    ]
+  }
+}
+```
+
+## Fehlerbehandlung
+
+Die API gibt Standard-HTTP-Statuscodes zurück：
+
+| Code | Beschreibung |
+|------|-------------|
+| 200 | Erfolg |
+| 400 | Falsche Anforderung |
+| 401 | Nicht autorisiert |
+| 429 | Ratenlimit überschritten |
+| 500 | Serverfehler |
+
+## Ratenlimits
+
+API-Aufrufe unterliegen Ratenlimits. Wenn Sie das Limit überschreiten, erhalten Sie eine 429-Antwort.

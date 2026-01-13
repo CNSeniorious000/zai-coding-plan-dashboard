@@ -1,0 +1,127 @@
+---
+title: Référence API
+description: Documentation technique pour les endpoints de l'API d'Utilisation Z.AI
+---
+
+# Référence API
+
+Cette page documente les endpoints de l'API Z.AI utilisés par le tableau de bord.
+
+## Authentification
+
+Toutes les requêtes API nécessitent une authentification utilisant un jeton Bearer：
+
+```bash
+Authorization: Bearer YOUR_API_KEY
+```
+
+## URL de Base
+
+```
+https://api.z.ai
+```
+
+## Endpoints
+
+### Obtenir l'Utilisation des Modèles
+
+Récupère les statistiques d'utilisation des modèles pour une période de temps.
+
+```http
+GET /api/monitor/usage/model-usage
+```
+
+**Paramètres de Requête：**
+
+| Paramètre | Type | Description |
+|-----------|------|-------------|
+| startTime | string | Heure de début (format：`YYYY-MM-DD HH:mm:ss`) |
+| endTime | string | Heure de fin (format：`YYYY-MM-DD HH:mm:ss`) |
+
+**Réponse：**
+
+```json
+{
+  "data": [
+    {
+      "model": "glm-4.7",
+      "inputTokens": 12345,
+      "outputTokens": 6789,
+      "totalTokens": 19134,
+      "requestCount": 42
+    }
+  ]
+}
+```
+
+### Obtenir l'Utilisation des Outils
+
+Récupère les statistiques d'utilisation des outils.
+
+```http
+GET /api/monitor/usage/tool-usage
+```
+
+**Paramètres de Requête：**
+
+Identique à l'endpoint d'Utilisation des Modèles.
+
+**Réponse：**
+
+```json
+{
+  "data": [
+    {
+      "tool": "code_execution",
+      "callCount": 100,
+      "successCount": 95,
+      "failureCount": 5
+    }
+  ]
+}
+```
+
+### Obtenir la Limite de Quota
+
+Récupère le quota actuel et les limites d'utilisation.
+
+```http
+GET /api/monitor/usage/quota/limit
+```
+
+**Réponse：**
+
+```json
+{
+  "data": {
+    "limits": [
+      {
+        "type": "TOKENS_LIMIT",
+        "percentage": 45.5
+      },
+      {
+        "type": "TIME_LIMIT",
+        "percentage": 20.0,
+        "currentValue": 200,
+        "usage": 1000
+      }
+    ]
+  }
+}
+```
+
+## Gestion des Erreurs
+
+L'API renvoie des codes de statut HTTP standard：
+
+| Code | Description |
+|------|-------------|
+| 200 | Succès |
+| 400 | Mauvaise Requête |
+| 401 | Non Autorisé |
+| 429 | Limite de Taux Dépassée |
+| 500 | Erreur du Serveur |
+
+## Limites de Taux
+
+Les appels API sont soumis à limitation de taux. Si vous dépassez la limite, vous recevrez une réponse 429.

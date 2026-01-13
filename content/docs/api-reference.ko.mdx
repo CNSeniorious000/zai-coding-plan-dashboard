@@ -1,0 +1,127 @@
+---
+title: API 참조
+description: Z.AI 사용 API 엔드포인트에 대한 기술 문서
+---
+
+# API 참조
+
+이 페이지는 대시보드에서 사용하는 Z.AI API 엔드포인트를 문서화합니다.
+
+## 인증
+
+모든 API 요청에는 베어러 토큰을 사용한 인증이 필요합니다：
+
+```bash
+Authorization: Bearer YOUR_API_KEY
+```
+
+## 기본 URL
+
+```
+https://api.z.ai
+```
+
+## 엔드포인트
+
+### 모델 사용량 가져오기
+
+특정 기간 동안의 모델 사용 통계를 검색합니다.
+
+```http
+GET /api/monitor/usage/model-usage
+```
+
+**쿼리 매개변수：**
+
+| 매개변수 | 타입 | 설명 |
+|-----------|------|------|
+| startTime | string | 시작 시간 (형식：`YYYY-MM-DD HH:mm:ss`) |
+| endTime | string | 종료 시간 (형식：`YYYY-MM-DD HH:mm:ss`) |
+
+**응답：**
+
+```json
+{
+  "data": [
+    {
+      "model": "glm-4.7",
+      "inputTokens": 12345,
+      "outputTokens": 6789,
+      "totalTokens": 19134,
+      "requestCount": 42
+    }
+  ]
+}
+```
+
+### 도구 사용량 가져오기
+
+도구 사용 통계를 검색합니다.
+
+```http
+GET /api/monitor/usage/tool-usage
+```
+
+**쿼리 매개변수：**
+
+모델 사용량 엔드포인트와 동일.
+
+**응답：**
+
+```json
+{
+  "data": [
+    {
+      "tool": "code_execution",
+      "callCount": 100,
+      "successCount": 95,
+      "failureCount": 5
+    }
+  ]
+}
+```
+
+### 할당량 제한 가져오기
+
+현재 할당량 및 사용 제한을 검색합니다.
+
+```http
+GET /api/monitor/usage/quota/limit
+```
+
+**응답：**
+
+```json
+{
+  "data": {
+    "limits": [
+      {
+        "type": "TOKENS_LIMIT",
+        "percentage": 45.5
+      },
+      {
+        "type": "TIME_LIMIT",
+        "percentage": 20.0,
+        "currentValue": 200,
+        "usage": 1000
+      }
+    ]
+  }
+}
+```
+
+## 오류 처리
+
+API는 표준 HTTP 상태 코드를 반환합니다：
+
+| 코드 | 설명 |
+|--------|------|
+| 200 | 성공 |
+| 400 | 잘못된 요청 |
+| 401 | 인증되지 않음 |
+| 429 | 속도 제한 |
+| 500 | 서버 오류 |
+
+## 속도 제한
+
+API 호출은 속도 제한의 대상입니다. 제한을 초과하면 429 응답을 받게 됩니다.
