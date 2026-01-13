@@ -14,6 +14,8 @@
     "description": "您的 API 密钥仅用于查询 Z.AI 服务器，不会被存储。",
     "placeholder": "输入您的 Z.AI API 密钥",
     "paste": "从剪贴板粘贴",
+    "show": "显示密钥",
+    "hide": "隐藏密钥",
     "invalid": "格式：32 个十六进制字符 + 点 + 16 个字母数字字符"
   },
   "quota": {

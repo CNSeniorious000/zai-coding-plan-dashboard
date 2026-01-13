@@ -14,6 +14,8 @@
     "description": "API 키는 Z.AI 서버 쿼리에만 사용되며 저장되지 않습니다.",
     "placeholder": "Z.AI API 키를 입력하세요",
     "paste": "클립보드에서 붙여넣기",
+    "show": "키 표시",
+    "hide": "키 숨기기",
     "invalid": "형식: 16진수 32자 + 점 + 영숫자 16자"
   },
   "quota": {

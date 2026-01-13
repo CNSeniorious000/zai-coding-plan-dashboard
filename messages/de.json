@@ -14,6 +14,8 @@
     "description": "Ihr API-Schlüssel wird nur zum Abfragen der Z.AI-Server verwendet und nicht gespeichert.",
     "placeholder": "Geben Sie Ihren Z.AI API-Schlüssel ein",
     "paste": "Aus Zwischenablage einfügen",
+    "show": "Schlüssel anzeigen",
+    "hide": "Schlüssel verbergen",
     "invalid": "Format: 32 hexadezimale Zeichen + Punkt + 16 alphanumerische Zeichen"
   },
   "quota": {

@@ -14,6 +14,8 @@
     "description": "Votre clé API est uniquement utilisée pour interroger les serveurs Z.AI et n'est pas stockée.",
     "placeholder": "Entrez votre clé API Z.AI",
     "paste": "Coller depuis le presse-papiers",
+    "show": "Afficher la clé",
+    "hide": "Masquer la clé",
     "invalid": "Format : 32 caractères hexadécimaux + point + 16 caractères alphanumériques"
   },
   "quota": {

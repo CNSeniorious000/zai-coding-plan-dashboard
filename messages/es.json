@@ -14,6 +14,8 @@
     "description": "Tu API key solo se usa para consultar los servidores de Z.AI y no se almacena.",
     "placeholder": "Ingresa tu API key de Z.AI",
     "paste": "Pegar del portapapeles",
+    "show": "Mostrar clave",
+    "hide": "Ocultar clave",
     "invalid": "Formato: 32 caracteres hexadecimales + punto + 16 caracteres alfanuméricos"
   },
   "quota": {

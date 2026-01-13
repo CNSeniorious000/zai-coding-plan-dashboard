@@ -14,6 +14,8 @@
     "description": "Your API key is only used to query Z.AI servers and is not stored.",
     "placeholder": "Enter your Z.AI API key",
     "paste": "Paste from clipboard",
+    "show": "Show API key",
+    "hide": "Hide API key",
     "invalid": "Format: 32 hex characters + dot + 16 alphanumeric characters"
   },
   "quota": {

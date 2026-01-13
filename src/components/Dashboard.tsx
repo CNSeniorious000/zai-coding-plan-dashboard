@@ -2,7 +2,7 @@
 
 import { useState, useCallback, useEffect } from 'react';
 import { useTranslations } from 'next-intl';
-import { Key, Loader2, RefreshCw, AlertCircle, ClipboardPaste } from 'lucide-react';
+import { Key, Loader2, RefreshCw, AlertCircle, ClipboardPaste, Eye, EyeOff } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
@@ -53,6 +53,7 @@ export type { UsageData };
 export function Dashboard({ onDataLoaded }: DashboardProps) {
   const t = useTranslations();
   const [apiKey, setApiKey] = useState('');
+  const [showApiKey, setShowApiKey] = useState(true);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [data, setData] = useState<UsageData | null>(null);
@@ -147,9 +148,9 @@ export function Dashboard({ onDataLoaded }: DashboardProps) {
         </CardHeader>
         <CardContent>
           <div className="flex gap-2">
-            <div className="flex-1 flex gap-1">
+            <div className="flex-1 flex gap-2">
               <Input
-                type="text"
+                type={showApiKey ? 'text' : 'password'}
                 value={apiKey}
                 onChange={(e) => setApiKey(e.target.value)}
                 onKeyDown={(e) => {
@@ -160,6 +161,15 @@ export function Dashboard({ onDataLoaded }: DashboardProps) {
                 placeholder={t('apiKey.placeholder')}
                 className={`flex-1 font-mono text-xs h-8 ${apiKey && !isValidApiKey ? 'border-destructive/50' : ''}`}
               />
+              <Button
+                variant="outline"
+                size="sm"
+                className="h-8 px-2"
+                onClick={() => setShowApiKey(!showApiKey)}
+                title={showApiKey ? t('apiKey.hide') : t('apiKey.show')}
+              >
+                {showApiKey ? <EyeOff className="w-3.5 h-3.5" /> : <Eye className="w-3.5 h-3.5" />}
+              </Button>
               <Button
                 variant="outline"
                 size="sm"
