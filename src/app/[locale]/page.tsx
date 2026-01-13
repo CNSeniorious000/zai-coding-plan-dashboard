@@ -75,7 +75,7 @@ export default function Home() {
 
         {/* Charts */}
         {usageData && (
-          <div className="mt-8">
+          <div className="mt-4">
             <UsageCharts
               modelUsage={usageData.modelUsage}
               quotaLimits={usageData.quotaLimit?.limits}
