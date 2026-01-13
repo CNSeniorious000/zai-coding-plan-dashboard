@@ -22,29 +22,21 @@ export function Dashboard() {
   const [showApiKey, setShowApiKey] = useState(true);
   const error = usageData?.error;
 
-  const formatResetTime = (timestamp: number) => {
-    const date = new Date(timestamp);
-    return date.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
-  };
-
-  // Auto-fetch on mount if API key is already set
-  useEffect(() => {
-    if (isValidApiKey && !usageData && !isLoading) {
-      fetchUsage();
-    }
-  }, [isValidApiKey, usageData, isLoading, fetchUsage]);
-
   const handlePaste = useCallback(async () => {
     const text = await navigator.clipboard.readText();
     if (text) {
       setApiKey(text);
-      // Validate and fetch after setting the key
       const API_KEY_PATTERN = /^[a-f0-9]{32}\.[A-Za-z0-9]{16}$/;
       if (API_KEY_PATTERN.test(text)) {
-        fetchUsage();
+        fetchUsage(text); // ✅ 传入 text，立即 fetch
       }
     }
   }, [setApiKey, fetchUsage]);
+
+  const formatResetTime = (timestamp: number) => {
+    const date = new Date(timestamp);
+    return date.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+  };
 
   return (
     <div className='space-y-4'>
@@ -94,7 +86,7 @@ export function Dashboard() {
               </Button>
             </div>
             <Button
-              onClick={fetchUsage}
+              onClick={() => fetchUsage()}
               disabled={isLoading || !apiKey || !isValidApiKey}
               size='sm'
               className='rounded-full px-3 h-8 text-xs'

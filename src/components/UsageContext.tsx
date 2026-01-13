@@ -1,6 +1,6 @@
 'use client';
 
-import { createContext, type ReactNode, useCallback, useContext, useEffect, useState } from 'react';
+import { createContext, type ReactNode, useCallback, useContext, useEffect, useRef, useState } from 'react';
 
 export interface UsageData {
   modelUsage?: {
@@ -40,7 +40,7 @@ interface UsageContextType {
   usageData: UsageData | null;
   setUsageData: (data: UsageData | null) => void;
   isValidApiKey: boolean;
-  fetchUsage: () => void;
+  fetchUsage: (key?: string) => void;
   isLoading: boolean;
 }
 
@@ -55,10 +55,17 @@ export function UsageProvider({ children }: { children: ReactNode }) {
   const [isLoading, setIsLoading] = useState(false);
   const [initialFetchTriggered, setInitialFetchTriggered] = useState(false);
 
+  // Keep ref in sync with apiKey for stale closure workaround
+  const apiKeyRef = useRef(apiKey);
+  useEffect(() => {
+    apiKeyRef.current = apiKey;
+  }, [apiKey]);
+
   const isValidApiKey = API_KEY_PATTERN.test(apiKey);
 
-  const fetchUsage = useCallback(async () => {
-    if (!apiKey.trim() || !isValidApiKey) return;
+  const fetchUsage = useCallback(async (key?: string) => {
+    const targetApiKey = key ?? apiKeyRef.current;
+    if (typeof targetApiKey !== 'string' || !targetApiKey.trim() || !API_KEY_PATTERN.test(targetApiKey)) return;
 
     setIsLoading(true);
 
@@ -81,7 +88,7 @@ export function UsageProvider({ children }: { children: ReactNode }) {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
-          apiKey,
+          apiKey: targetApiKey,
           startTime: formatDateTime(startDate),
           endTime: formatDateTime(endDate),
         }),
@@ -100,7 +107,7 @@ export function UsageProvider({ children }: { children: ReactNode }) {
     } finally {
       setIsLoading(false);
     }
-  }, [apiKey, isValidApiKey]);
+  }, []);
 
   // Restore from localStorage on mount (client-side only)
   useEffect(() => {
