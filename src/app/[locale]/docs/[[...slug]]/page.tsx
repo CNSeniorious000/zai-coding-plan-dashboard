@@ -7,11 +7,16 @@ import {
 } from 'fumadocs-ui/page';
 import { notFound } from 'next/navigation';
 import { getMDXComponents } from '../../../../../mdx-components';
+import { setRequestLocale } from 'next-intl/server';
 
 export default async function Page(props: {
   params: Promise<{ locale: string; slug?: string[] }>;
 }) {
   const params = await props.params;
+
+  // Enable static rendering
+  setRequestLocale(params.locale);
+
   const page = source.getPage(params.slug, params.locale);
   if (!page) notFound();
 
