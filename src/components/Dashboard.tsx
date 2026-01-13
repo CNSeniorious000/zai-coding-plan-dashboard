@@ -10,19 +10,22 @@ import { Input } from '@/components/ui/input';
 const API_KEY_STORAGE_KEY = 'zai-api-key';
 const API_KEY_PATTERN = /^[a-f0-9]{32}\.[A-Za-z0-9]{16}$/;
 
-interface UsageData {
-  modelUsage: ModelUsageItem[] | null;
-  toolUsage: ToolUsageItem[] | null;
-  quotaLimit: { limits: QuotaLimitItem[] } | null;
-  error?: string;
+interface TimeSeriesItem {
+  time: string;
+  fullTime: string;
+  calls: number;
+  tokens: number;
 }
 
-interface ModelUsageItem {
-  model: string;
-  inputTokens: number;
-  outputTokens: number;
-  totalTokens: number;
-  requestCount: number;
+interface UsageData {
+  modelUsage?: {
+    timeSeries: TimeSeriesItem[];
+    totalCalls: number;
+    totalTokens: number;
+  } | null;
+  toolUsage?: ToolUsageItem[] | null;
+  quotaLimit?: { limits: QuotaLimitItem[] } | null;
+  error?: string;
 }
 
 interface ToolUsageItem {

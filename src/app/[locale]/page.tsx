@@ -1,48 +1,18 @@
 'use client';
 
-import { useState, useMemo } from 'react';
+import { useState } from 'react';
 import { Link } from '@/i18n/routing';
 import { useTranslations } from 'next-intl';
-import { Dashboard, type UsageData as DashboardUsageData } from '@/components/Dashboard';
+import { Dashboard, type UsageData } from '@/components/Dashboard';
 import { UsageCharts } from '@/components/UsageCharts';
 import { ModeToggle } from '@/components/ModeToggle';
 import { LanguageSwitcher } from '@/components/LanguageSwitcher';
 import { BarChart3, BookOpen, Github } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
-interface TimeSeriesItem {
-  time: string;
-  fullTime: string;
-  calls: number;
-  tokens: number;
-}
-
-interface ChartData {
-  modelUsage?: {
-    timeSeries: TimeSeriesItem[];
-    totalCalls: number;
-    totalTokens: number;
-  } | null;
-  quotaLimits?: { type: string; percentage: number }[] | null;
-}
-
 export default function Home() {
   const t = useTranslations();
-  const [rawData, setRawData] = useState<DashboardUsageData | null>(null);
-
-  // Convert Dashboard's raw data to chart format
-  const chartData = useMemo<ChartData>(() => {
-    if (!rawData) return {};
-
-    const quotaLimits = rawData.quotaLimit?.limits?.map(limit => ({
-      type: limit.type,
-      percentage: limit.percentage,
-    })) || null;
-
-    return {
-      quotaLimits,
-    };
-  }, [rawData]);
+  const [usageData, setUsageData] = useState<UsageData | null>(null);
 
   return (
     <div className="min-h-screen bg-background relative overflow-hidden flex flex-col">
@@ -101,14 +71,14 @@ export default function Home() {
         </div>
 
         {/* Dashboard */}
-        <Dashboard onDataLoaded={setRawData} />
+        <Dashboard onDataLoaded={setUsageData} />
 
         {/* Charts */}
-        {chartData && (
+        {usageData && (
           <div className="mt-8">
             <UsageCharts
-              modelUsage={chartData.modelUsage}
-              quotaLimits={chartData.quotaLimits}
+              modelUsage={usageData.modelUsage}
+              quotaLimits={usageData.quotaLimit?.limits}
             />
           </div>
         )}
